@@ -1,0 +1,430 @@
+p {
+    margin: .75rem 0;
+}
+
+textarea {
+    resize: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.p-50 {
+    padding: 50px;
+}
+
+.p-t-0 {
+    padding-top: 0;
+}
+
+.p-l-r-20 {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.p-t-10 {
+    padding-top: 10px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.m-30 {
+    margin: 30px;
+}
+
+.m-40 {
+    margin: 40px;
+}
+
+.m-50 {
+    margin: 50px;
+}
+
+.m-t-0 {
+    margin-top: 0;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.m-t-30 {
+    margin-top: 30px;
+}
+
+
+.m-r-5 {
+    margin-right: 5px;
+}
+
+.m-r-10 {
+    margin-right: 10px;
+}
+
+.m-r-20 {
+    margin-right: 20px;
+}
+
+.m-b-30 {
+    margin-bottom: 30px;
+}
+
+.m-b-40 {
+    margin-bottom: 40px;
+}
+
+.section.no-bottom-padding {
+    padding-bottom: 0;
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+
+
+
+/NAVBAR/
+
+
+
+.navbar {
+    background: #fff;
+    color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    font-size: .9375rem;
+}
+
+.logo a {
+    color: #333;
+    padding: .75rem;
+    margin: 0 .25rem;
+    transition: background .3s;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.navbar ul li a {
+    color: #333;
+    padding: .75rem;
+    margin: 0 .25rem;
+    transition: background .3s;
+    text-transform: capitalize;
+    letter-spacing: 4px;
+}
+
+.logo a:hover,
+.navbar ul li a:hover {
+    color: #333;
+    background: #ccc;
+}
+
+.nav-btns
+{
+	display:flex;
+	gap:15px;
+}
+
+
+
+
+/SHOWCASE/
+
+
+.showcase {
+    background: url('https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/04/06/668813-mumbai-police-02.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/SECTION/
+
+
+
+
+.section {
+    padding: 60px 0;
+}
+
+.section-white {
+    background: #fff;
+    color: #333;
+}
+
+.section .section-heading h3 {
+    border-bottom: solid 1px #f1f1f1;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 0;
+}
+
+
+
+/SERVICES/
+
+
+div.container-1 {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    grid-gap: 70px;
+    margin: 0 50px 0 50px;
+}
+
+div.container-1 p.grid-item {
+    display: block;
+    text-align: center;
+    background-color: #e1edea;
+    margin-top:-45px;
+    margin-bottom:45px;
+    padding: 10px 10px;
+    font-size: 25px;
+    font-weight: 800;
+
+}
+
+.container-1 .a {
+    background: url("https://www.societybyte.swiss/wp-content/uploads/2018/01/iStock-614978872_ret-1170x780.jpg") center/cover no-repeat;
+}
+
+.container-1 .b {
+    background: url("https://www.silicon.co.uk/wp-content/uploads/2013/07/extortion-Shutterstock-poosan.jpg") center no-repeat;
+}
+
+.container-1 .c {
+    background: url("http://images.catchnews.com/upload/2018/08/03/Delhi-Murder_198535_730x419-m.jpg") center/cover no-repeat;
+}
+
+.container-1 .d {
+    background: url("https://blog.ipleaders.in/wp-content/uploads/2017/12/BV-Acharya.png") center/cover no-repeat;
+}
+
+.container-1 .e {
+    background: url("https://resize.indiatvnews.com/en/resize/oldbucket/715_-/mainnational/IndiaTv6c77d5_thief.jpg") center/cover no-repeat;
+}
+
+.container-1 .f {
+    background: url("https://tobygutierrez.files.wordpress.com/2017/05/file_search.jpg?w=597") center/cover no-repeat;
+}
+
+.container-1 a{
+	color:#000;
+}
+/ABOUT/
+
+
+
+.para {
+    font-size: .9375rem;
+    margin-bottom: 2.8rem;
+}
+
+.card {
+    flex: 0 1 24%;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-text h3 {
+    margin: .6rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+
+.card-text .fade {
+    color: gray;
+}
+
+.card-text:nth-child(2) {
+    font-size: .9375rem;
+}
+
+.card-text .btn {
+    display: block;
+    width: 100%;
+    padding: .6rem;
+}
+
+
+
+/CONTACT/
+
+
+
+form input {
+    display: block;
+    width: 100%;
+    padding: .6rem;
+    margin: .6rem 0;
+    border: 1px solid #ccc;
+    font-size: .9375rem;
+}
+
+
+
+/*/BUTTON AND LINK/*/
+
+
+.btn {
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.btn-light {
+    background: #eee;
+}
+
+.btn-light:hover {
+    cursor: pointer;
+    background: #ccc;
+}
+
+.btn-dark {
+    background: black;
+    color: #fff;
+
+}
+
+.btn-blue {
+    background: #151E3F;
+    color: #fff;
+    border-radius: 9px;
+}
+
+.btn-dark:hover {
+    cursor: pointer;
+    color: #333;
+    background: #ccc;
+}
+
+
+.btn-blue:hover {
+    cursor: pointer;
+    color: black;
+    background: #ccc;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+/MAP/
+
+
+
+.map {
+    width: 100%;
+}
+
+
+
+/FOOTER/
+
+
+
+
+footer {
+    padding: 2.5rem 0;
+}
+
+.black {
+    background: #000;
+    color: #fff;
+}
+
+
+footer p {
+    margin: 0;
+    font-size: .9375rem;
+    word-spacing: 250px;
+
+
+
+}
