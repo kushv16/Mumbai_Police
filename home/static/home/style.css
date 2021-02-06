@@ -140,8 +140,8 @@ textarea {
 
 
 .navbar {
-    background: #fff;
-    color: #ffffff;
+    /*background: #fff;*/
+    color: #fff;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -169,19 +169,13 @@ textarea {
 }
 
 .navbar ul li a {
-    color: #ffffff;
+    color:#fff;
     padding: .75rem;
     margin: 0 .25rem;
     transition: background .3s;
     text-transform: capitalize;
     letter-spacing: 4px;
 }
-
-/*.logo a:hover,*/
-/*.navbar ul li a:hover {*/
-/*    color: #fff;*/
-/*    background: #ccc;*/
-/*}*/
 
 .nav-btns
 {
@@ -247,62 +241,6 @@ textarea {
     justify-content: space-between;
     margin: .5rem 0;
 }
-
-
-
-/*SERVICES*/
-
-
-div.container-1 {
-    padding: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 250px 250px;
-    grid-gap: 70px;
-    margin: 0 50px 0 50px;
-}
-
-div.container-1 p.grid-item {
-    display: block;
-    text-align: center;
-    background-color: #e1edea;
-    margin-top:-45px;
-    margin-bottom:45px;
-    padding: 10px 10px;
-    font-size: 25px;
-    font-weight: 800;
-}
-
-.container-1 .a {
-    background: url("https://www.societybyte.swiss/wp-content/uploads/2018/01/iStock-614978872_ret-1170x780.jpg") center/cover no-repeat;
-}
-
-.container-1 .b {
-    background: url("https://www.silicon.co.uk/wp-content/uploads/2013/07/extortion-Shutterstock-poosan.jpg") center no-repeat;
-}
-
-.container-1 .c {
-    background: url("http://images.catchnews.com/upload/2018/08/03/Delhi-Murder_198535_730x419-m.jpg") center/cover no-repeat;
-}
-
-.container-1 .d {
-    background: url("https://blog.ipleaders.in/wp-content/uploads/2017/12/BV-Acharya.png") center/cover no-repeat;
-}
-
-.container-1 .e {
-    background: url("https://resize.indiatvnews.com/en/resize/oldbucket/715_-/mainnational/IndiaTv6c77d5_thief.jpg") center/cover no-repeat;
-}
-
-.container-1 .f {
-    background: url("https://tobygutierrez.files.wordpress.com/2017/05/file_search.jpg?w=597") center/cover no-repeat;
-}
-
-.container-1 a{
-    color:#000;
-}
-/*ABOUT*/
-
-
 
 .para {
     font-size: .9375rem;
@@ -472,4 +410,25 @@ footer p {
     cursor:pointer;
     color:#ffffff;
     background-color: rgba(94,106,176,0.8);
+}
+
+.card-wrapper
+{
+    margin:50px;
+    display:grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-gap:100px;
+}
+
+.card-wrapper div
+{
+    border: 1px solid black;
+    padding:10px;
+}
+
+.grid-item-header
+{
+    font-size:25px;
+    font-weight:bold;
+    color:#333;
 }
