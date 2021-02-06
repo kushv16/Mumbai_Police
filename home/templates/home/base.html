@@ -1,0 +1,73 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm" style="background-color:#5e6ab0">
+
+        <div class="logo">
+            <a href="{% url 'home-page' %}"><span class="bold m-r-5"><b style="color: white">Mumbai Police</b></span></a>
+        </div>
+
+        <ul class="hide" style="color: white">
+            <li><a href="{% url 'home-page' %}">Home</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#About">About Us</a></li>
+            <li><a href="#Contact">Contact Us</a></li>
+        </ul>
+
+
+        <div class="nav-btns">
+
+            <form class="form-inline">
+                <input type="submit" class="login-btn" value="Login"/>
+            </form>
+            <form class="form-inline">
+                <input type="submit" class="register-btn" value="Register"/>
+            </form>
+        </div>
+
+    </nav>
+    {% block content %}
+    {% endblock %}
+
+    <div class="footer-div">
+        <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 text-center d-flex justify-content-between footer-div">
+            <div class="col-sm-12 col-md-5 col-sm-5 col-xs-12 text-center">
+                <span title="Whats App">Traffic WhatsApp Helpline :</span> <a href="tel:8454999999" title="8454999999">8454999999</a>
+
+            </div>
+            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                <span title="Citizen Wall">Citizen Wall :</span> <a href="tel:103" title="103">103</a>
+            </div>
+            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                <span title="Control Room">Control Room :</span> <a href="tel:100" title="100">100</a>
+            </div>
+            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                <span title="Elder Line">Elder Line :</span> <a href="tel:1090" title="1090">1090</a>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <span>Copyright © | Developed by Kush,Divesh,Marmik</span>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+

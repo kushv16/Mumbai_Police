@@ -135,13 +135,13 @@ textarea {
 
 
 
-/NAVBAR/
+/*NAVBAR*/
 
 
 
 .navbar {
     background: #fff;
-    color: #333;
+    color: #ffffff;
     position: sticky;
     top: 0;
     z-index: 9999;
@@ -154,7 +154,7 @@ textarea {
 }
 
 .logo a {
-    color: #333;
+    color: #fff;
     padding: .75rem;
     margin: 0 .25rem;
     transition: background .3s;
@@ -169,7 +169,7 @@ textarea {
 }
 
 .navbar ul li a {
-    color: #333;
+    color: #ffffff;
     padding: .75rem;
     margin: 0 .25rem;
     transition: background .3s;
@@ -177,22 +177,31 @@ textarea {
     letter-spacing: 4px;
 }
 
-.logo a:hover,
-.navbar ul li a:hover {
-    color: #333;
-    background: #ccc;
-}
+/*.logo a:hover,*/
+/*.navbar ul li a:hover {*/
+/*    color: #fff;*/
+/*    background: #ccc;*/
+/*}*/
 
 .nav-btns
 {
-	display:flex;
-	gap:15px;
+    display:flex;
+    gap:15px;
+}
+
+.login-btn,.register-btn
+{
+    color:white;
+    background-color:rgb(94,106,176);
+}
+
+.login-btn:hover,.register-btn:hover
+{
+    cursor: pointer;
 }
 
 
-
-
-/SHOWCASE/
+/*SHOWCASE*/
 
 
 .showcase {
@@ -209,7 +218,7 @@ textarea {
 
 
 
-/SECTION/
+/*SECTION*/
 
 
 
@@ -241,7 +250,7 @@ textarea {
 
 
 
-/SERVICES/
+/*SERVICES*/
 
 
 div.container-1 {
@@ -262,7 +271,6 @@ div.container-1 p.grid-item {
     padding: 10px 10px;
     font-size: 25px;
     font-weight: 800;
-
 }
 
 .container-1 .a {
@@ -290,9 +298,9 @@ div.container-1 p.grid-item {
 }
 
 .container-1 a{
-	color:#000;
+    color:#000;
 }
-/ABOUT/
+/*ABOUT*/
 
 
 
@@ -332,7 +340,7 @@ div.container-1 p.grid-item {
 
 
 
-/CONTACT/
+/*CONTACT*/
 
 
 
@@ -345,9 +353,13 @@ form input {
     font-size: .9375rem;
 }
 
+.complaint-form-label
+{
+    font-size: 100px;
+}
 
 
-/*/BUTTON AND LINK/*/
+/*BUTTON AND LINK*/
 
 
 .btn {
@@ -395,7 +407,7 @@ form input {
 }
 
 
-/MAP/
+/*MAP*/
 
 
 
@@ -405,26 +417,59 @@ form input {
 
 
 
-/FOOTER/
+/*FOOTER*/
 
 
 
 
-footer {
+.footer{
     padding: 2.5rem 0;
+    background-color:#000000;
+
 }
 
-.black {
-    background: #000;
-    color: #fff;
+.footer-div
+{
+    background-color: black;
+    padding:30px;
 }
 
+.footer-div span
+{
+    color:white;
+}
+
+.footer-div a
+{
+    color:white;
+}
 
 footer p {
-    margin: 0;
     font-size: .9375rem;
     word-spacing: 250px;
+}
 
 
+.btn-div
+{
+    display:flex;
+    justify-content: space-between;
+    gap:25px;
+}
 
+
+.submit-btn,.reset-btn{
+    display:inline-block;
+    background-color:rgb(94,106,176);
+    color:#ffffff;
+    margin:1rem 6rem;
+    font-size:1.2rem;
+    border-radius:.6rem;
+}
+
+.reset-btn:hover,.submit-btn:hover
+{
+    cursor:pointer;
+    color:#ffffff;
+    background-color: rgba(94,106,176,0.8);
 }
