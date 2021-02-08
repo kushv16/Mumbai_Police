@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'complaints.apps.ComplaintsConfig',
     'users.apps.UsersConfig',
+    'geo.apps.GeoConfig',
+    'django.contrib.gis',
+    'leaflet',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,11 +84,11 @@ WSGI_APPLICATION = 'Mumbai_Police.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'Mumbai_Police',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
-        'HOST': '127.0.0.1',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -123,11 +126,22 @@ USE_L10N = True
 
 USE_TZ = True
 
+LEAFLET_CONFIG = {
+    'DEFAULT_CENTER':(19.076, 78.87),
+    'DEFAULT_ZOOM':5,
+    'MIN_ZOOM':2,
+    'MAX_ZOOM':18,
+    'ATTRIBUTION_PREFIX':'Developed by Divesh'
+}
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
