@@ -78,9 +78,9 @@
 
 		var routing =  L.Routing.control({
 		  waypoints: [
-		    L.latLng(19.076, 78.87),
-		    L.latLng(19.99, 78.01)
-		  ]
+		    L.latLng({{ lat }}, {{ lng }}),
+            L.latLng({{ lat }}, {{ lng }}),
+          ]
 		}).addTo(map);
 	}
 
