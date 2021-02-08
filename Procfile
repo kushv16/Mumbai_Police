@@ -1,0 +1,1 @@
+web: gunicorn Mumbai_Police.wsgi
