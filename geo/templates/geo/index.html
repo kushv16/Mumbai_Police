@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+{% load leaflet_tags %}
+<head>
+	{% leaflet_js %}
+	{% leaflet_css %}
+	<title>Geo Services</title>
+	<style type="text/css">
+		#gis {width: 80%;height:500px;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{% static 'routing/leaflet-routing-machine.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.min.css' %}">
+	<script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}" >	</script>
+	<script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.min.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'routing/leaflet-routing-machine.js' %}" ></script>
+</head>
+<body>
+<h3>Welcome to Mumbai Police Geo Services</h3>
+<br>
+<script type="text/javascript">
+	function our_layers(map,options){
+		var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				maxZoom: 19,
+				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+			});
+		var OpenTopoMap = L.tileLayer('http://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+			maxZoom: 17,
+			attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+		});
+		var datasets = new L.GeoJSON.AJAX("{% url 'data' %}",{
+			style: function colors(feature){
+
+			},
+			onEachFeature: function(feature,layer){
+				layer.bindPopup(feature.properties.type.toString());
+			}
+
+		});
+
+		var points = new L.GeoJSON.AJAX("{% url 'incidences' %}",{
+			pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    icon: L.icon({
+                        iconUrl: "https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png",
+                        iconSize: [28, 32],
+                        iconAnchor: [12, 28],
+                        popupAnchor: [0, -25]
+                    }),
+                    title: feature.properties.NAME,
+                    riseOnHover: true
+                });
+            },
+			onEachFeature: function(feature,layer){
+				layer.bindPopup(feature.properties.name.toString());
+			}
+
+		});
+
+		datasets.addTo(map);
+		points.addTo(map);
+
+
+		var baseLayers = {
+			"OSM": osm,
+			"OpenTopoMap":OpenTopoMap
+		}
+
+		var groupedOverlays = {
+		  "Layers": {
+		    "names": datasets,
+		    "incidences": points
+		  }
+
+		};
+
+		L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
+
+		var routing =  L.Routing.control({
+		  waypoints: [
+		    L.latLng({{ lat }}, {{ lng }}),
+            L.latLng({{ lat }}, {{ lng }}),
+          ]
+		}).addTo(map);
+	}
+
+</script>
+{% leaflet_map "gis" callback="window.our_layers" %}
+</body>
+</html>

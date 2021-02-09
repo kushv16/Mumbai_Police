@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,14 +28,15 @@ SECRET_KEY = '3_ntarp0b90njtopjrjk+zlk@0j9_3z_4vj_gb@upp#^=+c87!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['0.0.0.0','mumbaipolice.herokuapp.com']
+# 'https://mumbaipolice.herokuapp.com'
 
 # Application definition
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'complaints.apps.ComplaintsConfig',
+    #'whitenoise.runserver_nostatic',
     'users.apps.UsersConfig',
     'geo.apps.GeoConfig',
     'django.contrib.gis',
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -94,6 +98,7 @@ DATABASES = {
     }
 }
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -145,8 +150,13 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
+GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
+GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL='login'
 GEOIP_PATH =os.path.join('geoip')
+
+
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
 
