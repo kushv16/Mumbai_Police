@@ -12,14 +12,13 @@ def map_home(request):
 	else:
 		ip = request.META.get('REMOTE_ADDR')
 	g = GeoIP2()
-	lat, lng = g.lat_lon(ip)
-	#template_name = 'index.html'
+	(lat, lng) = g.lat_lon(ip)
+	# template_name = 'index.html'
 	context = {
-		'lat':lat,
-		'lng':lng,
+		'lat': lat,
+		'lng': lng,
 	}
 	return render(request, 'geo/index.html', context)
-
 
 
 def maha_datasets(request):
