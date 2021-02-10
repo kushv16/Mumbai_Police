@@ -177,20 +177,25 @@ textarea {
     letter-spacing: 4px;
 }
 
-.nav-btns
+.nav-btns-div
 {
     display:flex;
     gap:15px;
 }
 
-.login-btn,.register-btn
+.btn-nav
 {
-    color:white;
-    background-color:rgb(94,106,176);
+    border: 3px solid white;
+    color:#333;
+    background-color:#fff;
+    text-decoration: none;
 }
 
-.login-btn:hover,.register-btn:hover
+.btn-nav:hover
 {
+    background-color:#333;
+    color:#fff;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -431,4 +436,20 @@ footer p {
     font-size:25px;
     font-weight:bold;
     color:#333;
+}
+
+.grid-item-paragraph
+{
+    color:#333;
+}
+
+.card-wrapper a
+{
+    text-decoration: none;
+}
+
+.btn-police
+{
+    background-color:rgb(94,106,176);
+    color:white;
 }

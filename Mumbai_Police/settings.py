@@ -14,6 +14,22 @@ from pathlib import Path
 import dj_database_url
 
 
+
+#Used to fix gdal library error
+if os.name == 'nt':
+    import platform
+    OSGEO4W = r"C:\OSGeo4W"
+    if '64' in platform.architecture()[0]:
+        OSGEO4W += "64"
+    assert os.path.isdir(OSGEO4W), "Directory does not exist: " + OSGEO4W
+    os.environ['OSGEO4W_ROOT'] = OSGEO4W
+    os.environ['GDAL_DATA'] = OSGEO4W + r"\share\gdal"
+    os.environ['PROJ_LIB'] = OSGEO4W + r"\share\proj"
+    os.environ['PATH'] = OSGEO4W + r"\bin;" + os.environ['PATH']
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +44,7 @@ SECRET_KEY = '3_ntarp0b90njtopjrjk+zlk@0j9_3z_4vj_gb@upp#^=+c87!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','mumbaipolice.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0','mumbaipolice.herokuapp.com','127.0.0.1']
 # 'https://mumbaipolice.herokuapp.com'
 
 # Application definition
@@ -152,7 +168,7 @@ STATICFILES_DIRS = (
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL='login'
 GEOIP_PATH =os.path.join('geoip')
 

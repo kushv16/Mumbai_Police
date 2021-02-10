@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Complaint:
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    full_name = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     time = models.TimeField(auto_now=False, auto_now_add=False)
     type = models.TextField()
