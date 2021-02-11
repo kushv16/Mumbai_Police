@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
+from complaints import views as complaints_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +26,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('complaints/', include('complaints.urls')),
+    path('complaints/complaints_form_submission',complaints_views.complaints_form_submission,name='complaints_form_submission'),
     path('', include('home.urls')),
     path('geo/', include('geo.urls'))
 ]

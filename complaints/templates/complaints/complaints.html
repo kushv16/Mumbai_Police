@@ -1,84 +1,68 @@
 {% extends 'home/base.html' %}
 {% block content %}
-<style>
-    .complaint-form-label
-    {
-        font-size: 20px;
-        color: #474747;
-        font-weight: bold;
-    }
 
-    .form-disclaimer
-    {
-        font-size:18px;
-        margin:35px;
-    }
-
-</style>
 <div class="section section-white">
     <div class="container">
         <div class="section-heading">
             <h3 align="center" style="font-size:40px"><b>Onlin<u style="text-decoration-color:#5f41ba">e Com</u>plaint</b></h3><br>
         </div>
 
-        <form>
+        <form action="complaints_form_submission" method="post">
+            {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="fullName">Full Name *</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="Aryan">
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Aryan" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="contact">Contact Number *</label>
-                    <input type="tel" class="form-control" id="contact" placeholder="9987505854">
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="9987505854" required>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="email">Email *</label>
-                    <input type="email" class="form-control" id="email" placeholder="example@domain.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" required>
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="flatno">Room No/Street Name</label>
-                    <input type="text" class="form-control" id="flatno" placeholder="1209">
+                    <input type="text" class="form-control" id="flatno" name="flatno" placeholder="1209">
                 </div>
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="Sector-1,Bandra">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Sector-1,Bandra">
                 </div>
 
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="Mumbai">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Mumbai">
                 </div>
             </div>
 
             <div class="form-row d-flex justify-content-between">
                 <div class="form-group col-md-5">
                     <label class="complaint-form-label" for="state">State</label>
-                    <input type="text" class="form-control" id="state" placeholder="Maharashtra">
+                    <input type="text" class="form-control" id="state" name="state" placeholder="Maharashtra">
                 </div>
 
                 <div class="form-group col-md-5">
                     <label class="complaint-form-label" for="country">Country</label>
-                    <input type="text" class="form-control" id="country" placeholder="India">
+                    <input type="text" class="form-control" id="country" name="country" placeholder="India">
                 </div>
 
             </div>
 
             <div class="form-row d-flex justify-content-between">
                 <div class="form-group">
-                    <label class="complaint-form-label" for="date">Date of Incident *</label>
-                    <input type="date" id="date" placeholder="Date of Incident"/>
+                    <label for="datetime">Date and Time of Incident:</label>
+                    <input type="datetime-local" id="datetime" name="datetime">
                 </div>
+
                 <div class="form-group">
-                    <label class="complaint-form-label" for="time">Time of Incident * </label>
-                    <input type="time" id="time" placeholder="Time of Incident"/>
-                </div>
-                <div class="form-group">
-                    <label class="complaint-form-label" for="date">Type of Crime Committed * </label>
-                    <select id="inputState" class="form-control">
+                    <label class="complaint-form-label" for="crime">Type of Crime Committed * </label>
+                    <select id="crime" class="form-control" name="crime">
                         <option selected>Choose...</option>
                         <option>Cyber</option>
                         <option>Extortion</option>
@@ -86,9 +70,6 @@
                         <option>Dacoity</option>
                         <option>Theft</option>
                         <option>Other</option>
-
-
-
                     </select>
 
                 </div>
@@ -96,8 +77,8 @@
             </div>
 
             <div class="form-group">
-                <label class="complaint-form-label" for="complaint-description">Description *</label>
-                <textarea class="form-control" id="complaint-description" rows="5"></textarea>
+                <label class="complaint-form-label" for="desc">Description *</label>
+                <textarea class="form-control" id="desc" name = "desc" rows="5"></textarea>
             </div>
 
             <br><br>
@@ -126,15 +107,10 @@
             </div>
 
 
-
-
         </form>
 
         <br><br>
 
-{#        <p>#}
-{#            <a href="${pageContext.request.contextPath}/home">Back to Home</a>#}
-{#        </p>#}
     </div>
 </div>
 
