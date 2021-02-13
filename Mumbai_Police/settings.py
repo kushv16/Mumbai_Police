@@ -52,6 +52,12 @@ ALLOWED_HOSTS = ['0.0.0.0','mumbaipolice.herokuapp.com','127.0.0.1']
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'complaints.apps.ComplaintsConfig',
+    'myadmin.apps.MyadminConfig',
+    'criminals.apps.CriminalsConfig',
+    'eChallan.apps.EchallanConfig',
+    'missingPerson.apps.MissingpersonConfig',
+    'stolenVehicles.apps.StolenvehiclesConfig',
+    'verification.apps.VerificationConfig',
     #'whitenoise.runserver_nostatic',
     'users.apps.UsersConfig',
     'geo.apps.GeoConfig',

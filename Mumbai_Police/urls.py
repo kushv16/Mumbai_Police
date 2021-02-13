@@ -18,6 +18,12 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
 from complaints import views as complaints_views
+from myadmin import views as myadmin_views
+from criminals import views as criminal_views
+from eChallan import views as eChallan_views
+from missingPerson import views as missingPerson_views
+from stolenVehicles import views as stolenVehicles_views
+from verification import views as verification_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +34,12 @@ urlpatterns = [
     path('complaints/', include('complaints.urls')),
     path('complaints/complaints_form_submission',complaints_views.complaints_form_submission,name='complaints_form_submission'),
     path('', include('home.urls')),
-    path('geo/', include('geo.urls'))
+    path('geo/', include('geo.urls')),
+    path('myadmin/',myadmin_views.myadmin,name='myadmin'),
+    path('criminals/',criminal_views.criminals,name='criminals'),
+    path('eChallan/',eChallan_views.eChallan,name='e-challan'),
+    path('missingPerson/',missingPerson_views.missingPerson,name='missing-person'),
+    path('stolenVehicles/',stolenVehicles_views.stolenVehicles,name='stolen-vehicles'),
+    path('verification/',verification_views.verification,name='verification'),
+
 ]
