@@ -1,3 +1,7 @@
+body{
+    background: #f7f7f7;
+}
+
 p {
     margin: .75rem 0;
 }
@@ -231,7 +235,7 @@ textarea {
 }
 
 .section-white {
-    background: #fff;
+    background: #f7f7f7;
     color: #333;
 }
 
@@ -258,10 +262,13 @@ textarea {
 
 .card {
     flex: 0 1 24%;
+    background: #f7f7f7;
 }
 
 .card img {
     width: 100%;
+    height: 250px;
+
 }
 
 .card-text h3 {
@@ -377,7 +384,7 @@ form input {
 
 .footer-div
 {
-    background-color: black;
+    background-color: rgb(94,106,176);
     padding:30px;
 }
 
@@ -431,8 +438,31 @@ footer p {
 
 .card-wrapper div
 {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     padding:10px;
+}
+
+.card-wrapper img
+{
+    height: 200px;
+    background: #f7f7f7
+}
+.services-div
+{
+    padding:20px;
+    border: 1px solid black;
+    border-radius:20%;
+}
+.services-div:hover
+{
+    background: #ffffff;
+    box-shadow: 10px 10px 5px grey;
+    border: white;
+}
+
+.services-div:hover img
+{
+    background: #ffffff;
 }
 
 .grid-item-header
@@ -463,5 +493,8 @@ footer p {
     font-size: 20px;
     color: #474747;
     font-weight: bold;
+}
+.form-disclaimer{
+ margin: 20px;
 }
 

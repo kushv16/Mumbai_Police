@@ -1,8 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import complaintsInfo
 
-
+@login_required
 def complaints(request):
     return render(request,'complaints/complaints.html')
 
@@ -23,4 +24,4 @@ def complaints_form_submission(request):
                                      city=city,state=state,country=country,datetime=datetime,crime=crime,desc=desc)
 
     complaints_info.save()
-    return render(request,'complaints/complaints.html')
+    return HttpResponseRedirect('/')

@@ -7,7 +7,7 @@
             <h3 align="center" style="font-size:40px"><b>Onlin<u style="text-decoration-color:#5f41ba">e Com</u>plaint</b></h3><br>
         </div>
 
-        <form action="complaints_form_submission" method="post">
+        <form action="{% url 'complaints_form_submission' %}" method="post" onsubmit="submitFunction()">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -57,19 +57,19 @@
             <div class="form-row d-flex justify-content-between">
                 <div class="form-group">
                     <label for="datetime">Date and Time of Incident:</label>
-                    <input type="datetime-local" id="datetime" name="datetime">
+                    <input type="datetime-local" id="datetime" name="datetime" required>
                 </div>
 
                 <div class="form-group">
                     <label class="complaint-form-label" for="crime">Type of Crime Committed * </label>
-                    <select id="crime" class="form-control" name="crime">
-                        <option selected>Choose...</option>
-                        <option>Cyber</option>
-                        <option>Extortion</option>
-                        <option>Chain Snatching</option>
-                        <option>Dacoity</option>
-                        <option>Theft</option>
-                        <option>Other</option>
+                    <select id="crime" required class="form-control" name="crime">
+                        <option value="">Choose...</option>
+                        <option value="Cyber">Cyber</option>
+                        <option value="Extortion">Extortion</option>
+                        <option value="Chain Snatching">Chain Snatching</option>
+                        <option value="Dacotiy">Dacoity</option>
+                        <option value="Theft">Theft</option>
+                        <option value="Other">Other</option>
                     </select>
 
                 </div>
@@ -78,7 +78,7 @@
 
             <div class="form-group">
                 <label class="complaint-form-label" for="desc">Description *</label>
-                <textarea class="form-control" id="desc" name = "desc" rows="5"></textarea>
+                <textarea class="form-control" id="desc" name = "desc" rows="5" required></textarea>
             </div>
 
             <br><br>
@@ -91,7 +91,7 @@
 
 
             <div class="form-check">
-                <input style="width:30px;height:30px" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
+                <input style="width:30px;height:30px" required class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
 
                 <p class="form-disclaimer">
                     I certify that the information provided by me in above form is accurate and correct as per best of my knowledge. I understand that withholding of information or giving false information is a criminal offense and may result in legal action against me.
@@ -103,7 +103,7 @@
 
             <div class="d-flex justify-content-between btn-div">
                 <input type="reset" value="Reset" class="reset-btn">
-                <input type="submit" value="Submit" class="submit-btn">
+                <input id="submit-btn" type="submit" value="Submit" class="submit-btn">
             </div>
 
 
@@ -113,5 +113,13 @@
 
     </div>
 </div>
+
+    <script>
+        function submitFunction()
+        {
+            alert("Your complaint has been filed . We will shortly get in touch with you.")
+            window.location.href="{% url 'home' %}"
+        }
+    </script>
 
 {% endblock %}
