@@ -1,1 +1,204 @@
 {% extends 'complaints/complaints.html' %}
+{% block content %}
+
+<div class="section section-white">
+    <div class="container">
+        <div class="section-heading">
+            <h3 align="center" style="font-size:40px"><b>Stol<u style="text-decoration-color:#5f41ba">en Vehi</u>cles</b></h3><br>
+        </div>
+
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="fullName">Full Name *</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Aryan" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="contact">Contact Number *</label>
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="9987505854" required>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="model_name">Model Name *</label>
+                    <input type="text" class="form-control" id="model_name" name="model name" placeholder="KTM Duke">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="reg_no">Registration Number *</label>
+                    <input type="text" class="form-control" id="reg_no" name="registration number" placeholder="MH01A1916">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="chassis_no">Chassis Number *</label>
+                    <input type="text" class="form-control" id="chassis_no" name="chassis_no" placeholder="12345678901234567">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="engine_no">Engine Number *</label>
+                    <input type="text" class="form-control" id="engine_no" name="engine_no" placeholder="52WVC10338">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="datetime">Date and Time of Incident:</label>
+                    <input type="datetime-local" id="datetime" name="datetime" required>
+                </div>
+
+
+                 <div class="form-group">
+                        <label class="complaint-form-label" for="police_st">Nearest Police Station * </label>
+                        <select id="crime" required class="form-control" name="police_st">
+                            <option value="">Choose...</option>
+                            <option value="2">Aarey</option>
+                            <option value="3">Agripada</option>
+                            <option value="5">Amboli</option>
+                            <option value="4">Airport</option>
+                            <option value="6">Andheri</option>
+                            <option value="7">Antop Hill</option>
+                            <option value="8">Azad Maidan</option>
+                            <option value="10">B.K.C.</option>
+                            <option value="9">Bandra</option>
+                            <option value="11">Bangur Nagar</option>
+                            <option value="12">Bhandup</option>
+                            <option value="13">Bhoiwada</option>
+                            <option value="14">Borivali</option>
+                            <option value="15">Byculla</option>
+                            <option value="101">Central Region Cyber</option>
+                            <option value="16">Charkop</option>
+                            <option value="17">Chembur</option>
+                            <option value="18">Chunabhatti</option>
+                            <option value="19">Colaba</option>
+                            <option value="20">Cuffe Parade</option>
+                            <option value="23">D. N. Nagar</option>
+                            <option value="24">Dadar</option>
+                            <option value="25">Dahisar</option>
+                            <option value="26">Deonar</option>
+                            <option value="27">Dharavi</option>
+                            <option value="28">Dindoshi</option>
+                            <option value="29">Dongri</option>
+                            <option value="22">Dr.D.B Marg</option>
+                            <option value="102">East Region Cyber</option>
+                            <option value="30">Gamdevi</option>
+                            <option value="31">Ghatkopar</option>
+                            <option value="32">Gorai</option>
+                            <option value="33">Goregaon</option>
+                            <option value="34">Govandi</option>
+                            <option value="36">Jogeshwari</option>
+                            <option value="37">Juhu</option>
+                            <option value="38">Kalachowki</option>
+                            <option value="39">Kandivali</option>
+                            <option value="40">Kanjurmarg</option>
+                            <option value="41">Kasturba marg</option>
+                            <option value="42">Khar</option>
+                            <option value="43">Kherwadi</option>
+                            <option value="44">Kurar</option>
+                            <option value="45">Kurla</option>
+                            <option value="46">L. T. Marg</option>
+                            <option value="48">M.H.B. Colony</option>
+                            <option value="47">M.I.D.C.</option>
+                            <option value="49">M.R.A. Marg</option>
+                            <option value="50">Mahim</option>
+                            <option value="52">Malabar Hill</option>
+                            <option value="51">Malad</option>
+                            <option value="53">Malvani</option>
+                            <option value="54">Mankhurd</option>
+                            <option value="55">Marine Drive</option>
+                            <option value="56">Matunga</option>
+                            <option value="57">Meghwadi</option>
+                            <option value="58">Mulund</option>
+                            <option value="61">N. M. Joshi Marg</option>
+                            <option value="62">Nagpada</option>
+                            <option value="63">Navghar</option>
+                            <option value="64">Nehru Nagar</option>
+                            <option value="65">Nirmal Nagar</option>
+                            <option value="104">North Region Cyber</option>
+                            <option value="66">Oshiwara</option>
+                            <option value="67">PantNagar</option>
+                            <option value="68">Parksite</option>
+                            <option value="69">Powai</option>
+                            <option value="70">Pydhonie</option>
+                            <option value="71">R.A.K. Marg</option>
+                            <option value="72">R.C.F.</option>
+                            <option value="73">Sahar</option>
+                            <option value="74">Sakinaka</option>
+                            <option value="75">Samta Nagar</option>
+                            <option value="76">Santacruz</option>
+                            <option value="77">Sewree</option>
+                            <option value="78">Shahu nagar</option>
+                            <option value="79">Shivaji Nagar</option>
+                            <option value="80">Shivaji Park</option>
+                            <option value="81">Sion</option>
+                            <option value="35">Sir J.J. Marg</option>
+                            <option value="96">South Region Cyber</option>
+                            <option value="82">Tardeo</option>
+                            <option value="83">Tilak Nagar</option>
+                            <option value="84">Trombay</option>
+                            <option value="85">V. P. Road</option>
+                            <option value="86">Vakola</option>
+                            <option value="87">Vanrai</option>
+                            <option value="88">Versova</option>
+                            <option value="89">Vikhroli</option>
+                            <option value="90">VileParle</option>
+                            <option value="91">Vinoba Bhave Nagar</option>
+                            <option value="92">Wadala</option>
+                            <option value="93">Wadala Truck Terminal</option>
+                            <option value="103">West Region Cyber</option>
+                            <option value="94">Worli</option>
+                            <option value="95">Yellow Gate</option>
+                        </select>
+                 </div>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label class="complaint-form-label" for="desc">Description *</label>
+                <textarea class="form-control" id="desc" name = "desc" rows="5" required></textarea>
+            </div>
+
+            <br><br>
+
+            <div class="form-group">
+                <small><i style="font-size: 13px">Max 5 MB</i></small>
+                <p style="margin: 0px">Select Files to Upload</p>
+                <input style="margin: 2px" type="file" autocomplete="nope" multiple="">
+            </div>
+
+
+            <div class="form-check">
+                <input style="width:30px;height:30px" required class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
+
+                <p class="form-disclaimer">
+                    I certify that the information provided by me in above form is accurate and correct as per best of my knowledge. I understand that withholding of information or giving false information is a criminal offense and may result in legal action against me.
+                    <br>
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="d-flex justify-content-between btn-div">
+                <input type="reset" value="Reset" class="reset-btn">
+                <input id="submit-btn" type="submit" value="Submit" class="submit-btn">
+            </div>
+
+
+        </form>
+
+        <br><br>
+
+    </div>
+</div>
+
+    <script>
+        function submitFunction()
+        {
+            alert("Your complaint has been filed . We will shortly get in touch with you.")
+            window.location.href="{% url 'home' %}"
+        }
+    </script>
+
+{% endblock %}
