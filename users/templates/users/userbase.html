@@ -23,9 +23,9 @@
 
         <ul class="hide" style="color:rgb(94,106,176)">
             <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="#Services">Services</a></li>
-            <li><a href="#About">About Us</a></li>
-            <li><a href="#Contact">Contact Us</a></li>
+            <li><a href="{% url 'home' %}#Services">Services</a></li>
+            <li><a href="{% url 'home' %}#About">About Us</a></li>
+            <li><a href="{% url 'home' %}#Contact">Contact Us</a></li>
         </ul>
 
 
@@ -44,5 +44,6 @@
 
     {% block content %}
     {% endblock content %}
+
 </body>
 </html>
