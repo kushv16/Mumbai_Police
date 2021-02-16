@@ -25,6 +25,7 @@ from missingPerson import views as missingPerson_views
 from stolenVehicles import views as stolenVehicles_views
 from verification import views as verification_views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
@@ -36,11 +37,13 @@ urlpatterns = [
     path('', include('home.urls')),
     path('geo/', include('geo.urls')),
     path('myadmin/',myadmin_views.myadmin,name='myadmin'),
-    path('criminals/',criminal_views.criminals,name='criminals'),
+    path('addCriminals/',criminal_views.addCriminals,name='add-criminal'),
+    path('addCriminals/addCriminals_form_submission',criminal_views.addCriminals_form_submission,name='addCriminal_form_submission'),
     path('eChallan/',eChallan_views.eChallan,name='e-challan'),
     path('missingPerson/',missingPerson_views.missingPerson,name='missing-person'),
     path('stolenVehicles/',stolenVehicles_views.stolenVehicles,name='stolen-vehicles'),
     path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),
     path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
+    path('viewComplaints/',myadmin_views.viewComplaints,name='view-complaints'),
 ]

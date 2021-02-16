@@ -7,7 +7,7 @@
             <h3 align="center" style="font-size:40px"><b>Crim<u style="text-decoration-color:#5f41ba">inal Rec</u>ords</b></h3><br>
         </div>
 
-        <form>
+        <form action="{% url 'addCriminal_form_submission' %}" method="post">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -47,19 +47,19 @@
 
             <div class="form-row d-flex justify-content-between">
                 <div class="form-group col-md-5">
-                    <label class="complaint-form-label" for="prison_sentence">Prision Sentenced</label>
-                    <input type="number" class="form-control" id="prisonsentence" name="prisonsentence" placeholder="10">
+                    <label class="complaint-form-label" for="prison_sentence">Prison Sentenced</label>
+                    <input type="number" class="form-control" id="prison_sentence" name="prison_sentence" placeholder="10">
                 </div>
                 <div class="form-group col-md-5">
-                    <label class="complaint-form-label" for="currentstatus">Current Status</label>
-                    <select name="currentstatus" class="form-control" id="currentstatus">
+                    <label class="complaint-form-label" for="current_status">Current Status</label>
+                    <select name="current_status" class="form-control" id="current_status">
                         <option value="">Choose...</option>
-                        <option value="1">Captured</option>
-                        <option value="2">Free</option>
+                        <option value="1">In Prison</option>
+                        <option value="2">On Bail</option>
+                        <option value="3">Released</option>
                     </select>
 
                 </div>
-
             </div>
 
 
