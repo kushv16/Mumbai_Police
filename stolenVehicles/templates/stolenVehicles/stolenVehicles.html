@@ -7,7 +7,8 @@
             <h3 align="center" style="font-size:40px"><b>Stol<u style="text-decoration-color:#5f41ba">en Vehi</u>cles</b></h3><br>
         </div>
 
-        <form>
+        <form action="{% url 'stolenVehicles_form_submission' %}" method="post">
+            {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="fullName">Full Name *</label>
@@ -20,14 +21,14 @@
 
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="model_name">Model Name *</label>
-                    <input type="text" class="form-control" id="model_name" name="model name" placeholder="KTM Duke">
+                    <input type="text" class="form-control" id="model_name" name="model_name" placeholder="KTM Duke">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="reg_no">Registration Number *</label>
-                    <input type="text" class="form-control" id="reg_no" name="registration number" placeholder="MH01A1916">
+                    <input type="text" class="form-control" id="reg_no" name="reg_no" placeholder="MH01A1916">
                 </div>
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="chassis_no">Chassis Number *</label>
@@ -50,8 +51,8 @@
 
 
                  <div class="form-group">
-                        <label class="complaint-form-label" for="police_st">Nearest Police Station * </label>
-                        <select id="crime" required class="form-control" name="police_st">
+                        <label class="complaint-form-label" for="police_station">Nearest Police Station * </label>
+                        <select id="police_station" required class="form-control" name="police_station">
                             <option value="">Choose...</option>
                             <option value="2">Aarey</option>
                             <option value="3">Agripada</option>
@@ -157,7 +158,7 @@
 
             <div class="form-group">
                 <label class="complaint-form-label" for="desc">Description *</label>
-                <textarea class="form-control" id="desc" name = "desc" rows="5" required></textarea>
+                <textarea class="form-control" id="desc" name="desc" rows="5" required></textarea>
             </div>
 
             <br><br>

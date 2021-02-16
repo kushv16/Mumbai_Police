@@ -20,8 +20,8 @@ def complaints_form_submission(request):
     crime = request.POST['crime']
     desc = request.POST['desc']
 
-    complaints_info = complaintsInfo(fullName=fullName,contact=contact,email=email,flatno=flatno,address=address,
-                                     city=city,state=state,country=country,datetime=datetime,crime=crime,desc=desc)
+    complaints_info = complaintsInfo(fullName=fullName, contact=contact, email=email, flatno=flatno, address=address,
+                                     city=city, state=state, country=country, datetime=datetime, crime=crime, desc=desc)
 
     complaints_info.save()
     return HttpResponseRedirect('/')

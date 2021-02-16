@@ -5,17 +5,17 @@ from django.contrib.auth.models import User
 
 
 class complaintsInfo(models.Model):
-    fullName = models.CharField(max_length=50)
-    contact = models.CharField(max_length=30)
-    email = models.EmailField()
-    flatno = models.CharField(max_length=50)
-    address = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
+    fullName = models.CharField(max_length=50,default='null')
+    contact = models.CharField(max_length=30,default='null')
+    email = models.EmailField(default='null')
+    flatno = models.CharField(max_length=50,default='null')
+    address = models.CharField(max_length=50,default='null')
+    city = models.CharField(max_length=50,default='null')
+    state = models.CharField(max_length=50,default='null')
+    country = models.CharField(max_length=50,default='null')
     datetime = models.DateTimeField(blank=True,null=True,default=timezone.now)
-    crime = models.TextField()
-    desc = models.TextField()
+    crime = models.TextField(default='null')
+    desc = models.TextField(default='null')
 
     def __str__(self):
         return self.fullName

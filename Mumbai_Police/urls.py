@@ -40,6 +40,7 @@ urlpatterns = [
     path('eChallan/',eChallan_views.eChallan,name='e-challan'),
     path('missingPerson/',missingPerson_views.missingPerson,name='missing-person'),
     path('stolenVehicles/',stolenVehicles_views.stolenVehicles,name='stolen-vehicles'),
+    path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),
-
+    path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
 ]
