@@ -11,20 +11,13 @@
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label class="complaint-form-label" for="fullName">Full Name *</label>
-                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Aryan" required>
+                    <label class="complaint-form-label" for="firstName">first Name *</label>
+                    <input type="text" class="form-control" id=firstName" name="firstName" placeholder="Aryan" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="lastname">Last Name *</label>
                     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mehta" required>
                 </div>
-                <div class="form-group col-md-4">
-                    <label class="complaint-form-label" for="age">Age *</label>
-                    <input type="number" class="form-control" id="age" name="age" placeholder="18" required>
-                </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="Gender">Gender </label>
                     <select name="gender" required class="form-control" id="gender" style="margin-top: 10px">
@@ -34,26 +27,38 @@
                         <option value="4">Others</option>
                     </select>
                 </div>
+            </div>
+
+            <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label class="complaint-form-label" for="address">Address found</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Sector-1, Bandra">
+                    <label class="complaint-form-label" for="age">Age *</label>
+                    <input type="num" class="form-control" id="age" name="age" placeholder="18" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="color">Color</label>
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Fair">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label class="complaint-form-label" for="pincode">Pincode</label>
-                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="401107">
+                    <label class="complaint-form-label" for="height">Height</label>
+                    <input type="text" class="form-control" id="height" name="height" placeholder="5 ft">
                 </div>
             </div>
 
             <div class="form-row d-flex justify-content-between">
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="datetime">Date and Time of Incident:</label>
-                    <input type="datetime-local" id="datetime" name="datetime" required>
+                    <input type="datetime-local" id="datetime" name="datetime" required style="height: 40px">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="placemissing">Place Of Missing:</label>
+                    <input type="text" class="form-control" id="placemissing" name="placemissing" required>
                 </div>
 
                 <div class="form-group">
                     <label class="complaint-form-label" for="crime">Nearest Police Station: * </label>
-                    <select id="crime" required class="form-control" name="crime">
+                    <select id="crime" required class="form-control" name="crime" style="margin-top: 10px">
                         <option value="">Choose...</option>
                         <option value="2">Aarey</option>
                         <option value="3">Agripada</option>
