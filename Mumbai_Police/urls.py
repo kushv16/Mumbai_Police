@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
@@ -39,6 +41,7 @@ urlpatterns = [
     path('myadmin/',myadmin_views.myadmin,name='myadmin'),
     path('addCriminals/',criminal_views.addCriminals,name='add-criminal'),
     path('addCriminals/addCriminals_form_submission',criminal_views.addCriminals_form_submission,name='addCriminal_form_submission'),
+    path('viewCriminals',criminal_views.ViewCriminals,name='view-criminal'),
     path('eChallan/',eChallan_views.eChallan,name='e-challan'),
     path('missingPerson/',missingPerson_views.missingPerson,name='missing-person'),
     path('missingPerson/missingPerson_form_submission/',missingPerson_views.missingPerson_form_submission,name='missingPerson_form_submission'),
@@ -46,5 +49,4 @@ urlpatterns = [
     path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),
     path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
-    path('viewComplaints/',myadmin_views.viewComplaints,name='view-complaints'),
-]
+]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
