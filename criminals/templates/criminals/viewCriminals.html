@@ -1,0 +1,8 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    {% for criminal in Criminals %}
+        <p>{{ criminal.fullName }}</p>
+        <img src="{{ criminal.image }}" alt="criminal-image">
+    {% endfor %}
+{% endblock %}

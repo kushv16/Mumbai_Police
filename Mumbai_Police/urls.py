@@ -41,6 +41,7 @@ urlpatterns = [
     path('addCriminals/addCriminals_form_submission',criminal_views.addCriminals_form_submission,name='addCriminal_form_submission'),
     path('eChallan/',eChallan_views.eChallan,name='e-challan'),
     path('missingPerson/',missingPerson_views.missingPerson,name='missing-person'),
+    path('missingPerson/missingPerson_form_submission/',missingPerson_views.missingPerson_form_submission,name='missingPerson_form_submission'),
     path('stolenVehicles/',stolenVehicles_views.stolenVehicles,name='stolen-vehicles'),
     path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),

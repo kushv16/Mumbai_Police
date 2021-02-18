@@ -7,7 +7,7 @@
             <h3 align="center" style="font-size:40px"><b>Mis<u style="text-decoration-color:#5f41ba">sing Pers</u>ons</b></h3><br>
         </div>
 
-        <form>
+        <form action="{% url 'missingPerson_form_submission' %}" method="post">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -57,8 +57,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="complaint-form-label" for="crime">Nearest Police Station: * </label>
-                    <select id="crime" required class="form-control" name="crime" style="margin-top: 10px">
+                    <label class="complaint-form-label" for="police_st">Nearest Police Station: * </label>
+                    <select id="police_st" required class="form-control" name="police_st" style="margin-top: 10px">
                         <option value="">Choose...</option>
                         <option value="2">Aarey</option>
                         <option value="3">Agripada</option>
