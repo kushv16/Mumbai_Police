@@ -1,5 +1,10 @@
 {% extends "users/userbase.html" %}
 {% load crispy_forms_tags %}
+{% block headtag %}
+    <head>
+        <title>Register</title>
+    </head>
+{% endblock %}
 {% block content %}
     <div class="content-section p-l-r-50 p-t-10">
         <form method="POST" style="width: 500px;margin: auto">

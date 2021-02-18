@@ -1,6 +1,6 @@
 {% extends "users/userbase.html" %}
 {% block content %}
-
+<title>Missing Person Form</title>
 <div class="section section-white">
     <div class="container">
         <div class="section-heading">
@@ -22,9 +22,9 @@
                     <label class="complaint-form-label" for="Gender">Gender </label>
                     <select name="gender" required class="form-control" id="gender" style="margin-top: 10px">
                         <option value="">Choose...</option>
-                        <option value="2">Male</option>
-                        <option value="3">Female</option>
-                        <option value="4">Others</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
             </div>
@@ -60,18 +60,18 @@
                     <label class="complaint-form-label" for="police_st">Nearest Police Station: * </label>
                     <select id="police_st" required class="form-control" name="police_st" style="margin-top: 10px">
                         <option value="">Choose...</option>
-                        <option value="2">Aarey</option>
-                        <option value="3">Agripada</option>
-                        <option value="5">Amboli</option>
-                        <option value="4">Airport</option>
-                        <option value="6">Andheri</option>
-                        <option value="7">Antop Hill</option>
-                        <option value="8">Azad Maidan</option>
-                        <option value="10">B.K.C.</option>
-                        <option value="9">Bandra</option>
-                        <option value="11">Bangur Nagar</option>
-                        <option value="12">Bhandup</option>
-                        <option value="13">Bhoiwada</option>
+                        <option value="Aarey">Aarey</option>
+                        <option value="Agripada">Agripada</option>
+                        <option value="Amboli">Amboli</option>
+                        <option value="Airport">Airport</option>
+                        <option value="Andheri">Andheri</option>
+                        <option value="Antop Hill">Antop Hill</option>
+                        <option value="Azad Maidan">Azad Maidan</option>
+                        <option value="B.K.C">B.K.C.</option>
+                        <option value="Bandra">Bandra</option>
+                        <option value="Bangur">Bangur Nagar</option>
+                        <option value="Bhandup">Bhandup</option>
+                        <option value="Bhoiwada">Bhoiwada</option>
                         <option value="14">Borivali</option>
                         <option value="15">Byculla</option>
                         <option value="101">Central Region Cyber</option>
@@ -172,7 +172,7 @@
              <div class="form-group">
                 <small><i style="font-size: 13px">Max 5 MB</i></small>
                 <p style="margin: 0px">Select Files to Upload</p>
-                <input style="margin: 2px" type="file" autocomplete="nope" multiple="">
+                <input style="margin: 2px" type="file" autocomplete="nope" multiple="" name="image">
             </div>
 
 

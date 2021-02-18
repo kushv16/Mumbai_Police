@@ -7,6 +7,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HomePage</title>
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png" type = "image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -32,7 +33,7 @@
 
         <div class="nav-btns-div">
             {% if user.is_authenticated %}
-                <a class="btn btn-nav" href="#">Profile</a>
+                <a class="btn btn-nav" href="{% url 'view-missing-person' %}">Missing Person</a>
                 <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
             {%else %}
                 <a class="btn btn-nav" href="{% url 'register' %}">Register</a>
@@ -47,27 +48,28 @@
     {% block content %}
     {% endblock %}
 
-    <div class="footer-div">
-        <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 text-center d-flex justify-content-between footer-div">
-            <div class="col-sm-12 col-md-5 col-sm-5 col-xs-12 text-center">
-                <span title="Whats App">Traffic WhatsApp Helpline :</span> <a href="tel:8454999999" title="8454999999">8454999999</a>
+        <div class="footer-div">
+            <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 text-center d-flex justify-content-between footer-div">
+                <div class="col-sm-12 col-md-5 col-sm-5 col-xs-12 text-center">
+                    <span title="Whats App">Traffic WhatsApp Helpline :</span> <a href="tel:8454999999" title="8454999999">8454999999</a>
 
+                </div>
+                <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                    <span title="Citizen Wall">Citizen Wall :</span> <a href="tel:103" title="103">103</a>
+                </div>
+                <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                    <span title="Control Room">Control Room :</span> <a href="tel:100" title="100">100</a>
+                </div>
+                <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+                    <span title="Elder Line">Elder Line :</span> <a href="tel:1090" title="1090">1090</a>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
-                <span title="Citizen Wall">Citizen Wall :</span> <a href="tel:103" title="103">103</a>
-            </div>
-            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
-                <span title="Control Room">Control Room :</span> <a href="tel:100" title="100">100</a>
-            </div>
-            <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
-                <span title="Elder Line">Elder Line :</span> <a href="tel:1090" title="1090">1090</a>
+
+            <div class="text-center">
+                <span>Copyright © | Developed by Kush,Divesh,Marmik</span>
             </div>
         </div>
 
-        <div class="text-center">
-            <span>Copyright © | Developed by Kush,Divesh,Marmik</span>
-        </div>
-    </div>
 
 
     <script src="{% static '/home/style.js' %}"></script>

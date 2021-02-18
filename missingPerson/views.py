@@ -1,8 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import missingPersonInfo
 # Create your views here.
 
+@login_required
 def missingPerson(request):
     return render(request,'missingPerson/missingPerson.html')
 
@@ -18,11 +20,14 @@ def missingPerson_form_submission(request):
     placemissing = request.POST['placemissing']
     police_st = request.POST['police_st']
     desc = request.POST['desc']
-
+    image = request.POST['image']
     missingPerson_info = missingPersonInfo(firstName=firstName,lastname=lastname,gender=gender,age=age,color=color,
                                           height=height,datetime=datetime,placemissing=placemissing,police_st=police_st,
-                                          desc=desc)
+                                          desc=desc,image=image)
 
     missingPerson_info.save()
-
     return HttpResponseRedirect('/')
+
+def viewMissingPerson(request):
+    all_missing_reports = missingPersonInfo.objects.all()
+    return render(request,'missingPerson/viewMissingPerson.html',{'Missing':all_missing_reports})

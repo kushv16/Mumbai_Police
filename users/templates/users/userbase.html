@@ -6,7 +6,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HomePage</title>
+    {% block headtag %}
+    {% endblock headtag %}
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png" type = "image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,7 +33,6 @@
 
         <div class="nav-btns-div">
             {% if user.is_authenticated %}
-                <a class="btn btn-nav" href="#">Profile</a>
                 <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
             {% else %}
                 <a class="btn btn-nav" href="{% url 'register' %}">Register</a>

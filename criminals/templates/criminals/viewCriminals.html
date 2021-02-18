@@ -1,5 +1,9 @@
-{% extends "home/base.html" %}
-
+{% extends "users/userbase.html" %}
+{% block headtag %}
+    <head>
+        <title>Criminal Records</title>
+    </head>
+{% endblock %}
 {% block content %}
     {% for criminal in Criminals %}
         <div>

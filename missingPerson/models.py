@@ -15,6 +15,7 @@ class missingPersonInfo(models.Model):
     placemissing = models.CharField(max_length=50,default='null')
     police_st = models.TextField(default='null')
     desc = models.TextField(default='null')
+    image = models.ImageField(default='default.jpg',upload_to='media/missing_person_pics')
 
     def __str__(self):
         return self.firstName
