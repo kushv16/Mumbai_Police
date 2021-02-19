@@ -25,6 +25,7 @@ from eChallan import views as eChallan_views
 from missingPerson import views as missingPerson_views
 from stolenVehicles import views as stolenVehicles_views
 from verification import views as verification_views
+from geo import views as geo_views
 
 
 urlpatterns = [
@@ -36,6 +37,7 @@ urlpatterns = [
     path('complaints/complaints_form_submission',complaints_views.complaints_form_submission,name='complaints_form_submission'),
     path('', include('home.urls')),
     path('geo/', include('geo.urls')),
+    path('maha_data', geo_views.Maha, name='data'),
     path('addCriminals/',criminal_views.addCriminals,name='add-criminal'),
     path('addCriminals/addCriminals_form_submission',criminal_views.addCriminals_form_submission,name='addCriminal_form_submission'),
     path('viewCriminals',criminal_views.ViewCriminals,name='view-criminal'),
