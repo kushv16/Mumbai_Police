@@ -13,7 +13,7 @@ class missingPersonInfo(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
     )
-    user = models.ManyToManyField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     firstName = models.CharField(max_length=50,default='null')
     lastname = models.CharField(max_length=50,default='null')
     age = models.IntegerField(default='null')
