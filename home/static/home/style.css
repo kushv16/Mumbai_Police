@@ -67,6 +67,21 @@ html{
     text-decoration: none;
 }
 
+.geo-button {
+    border: 3px solid white;
+    color:#268f09;
+    background-color:#fff;
+    text-decoration: none;
+}
+
+.geo-button:hover
+{
+    background-color:#32b80d;
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .btn-nav:hover
 {
     background-color:#333;
