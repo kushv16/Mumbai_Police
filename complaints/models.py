@@ -5,6 +5,14 @@ from django.contrib.auth.models import User
 
 
 class complaintsInfo(models.Model):
+    CRIMES = (
+        ('cyber', 'Cyber'),
+        ('extortion', 'Extortion'),
+        ('chain snatching', 'Chain Snatching'),
+        ('dacotiy', 'Dacoity'),
+        ('theft', 'Theft'),
+        ('others', 'Others'),
+    )
     fullName = models.CharField(max_length=50,default='null')
     contact = models.CharField(max_length=30,default='null')
     email = models.EmailField(default='null')
@@ -14,8 +22,8 @@ class complaintsInfo(models.Model):
     state = models.CharField(max_length=50,default='null')
     country = models.CharField(max_length=50,default='null')
     datetime = models.DateTimeField(blank=True,null=True,default=timezone.now)
-    crime = models.TextField(default='null')
-    desc = models.TextField(default='null')
+    crime = models.CharField(max_length=50, choices=CRIMES,default='null')
+    desc = models.CharField(max_length=250,default='null')
 
     def __str__(self):
         return self.fullName

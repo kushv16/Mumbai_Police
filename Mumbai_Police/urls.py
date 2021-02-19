@@ -20,7 +20,6 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from users import views as user_views
 from complaints import views as complaints_views
-from myadmin import views as myadmin_views
 from criminals import views as criminal_views
 from eChallan import views as eChallan_views
 from missingPerson import views as missingPerson_views
@@ -31,14 +30,12 @@ from verification import views as verification_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
-    path('profile/', user_views.profile, name='profile'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('complaints/', include('complaints.urls')),
     path('complaints/complaints_form_submission',complaints_views.complaints_form_submission,name='complaints_form_submission'),
     path('', include('home.urls')),
     path('geo/', include('geo.urls')),
-    path('myadmin/',myadmin_views.myadmin,name='myadmin'),
     path('addCriminals/',criminal_views.addCriminals,name='add-criminal'),
     path('addCriminals/addCriminals_form_submission',criminal_views.addCriminals_form_submission,name='addCriminal_form_submission'),
     path('viewCriminals',criminal_views.ViewCriminals,name='view-criminal'),

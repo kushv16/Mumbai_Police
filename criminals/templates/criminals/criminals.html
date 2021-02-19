@@ -16,8 +16,8 @@
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label class="complaint-form-label" for="fullName">Full Name *</label>
-                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Aryan" required>
+                    <label class="complaint-form-label" for="firstname">First Name *</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Aryan" required>
                 </div>
                 <div class="form-group col-md-4">
                     <label class="complaint-form-label" for="lastname">Last Name *</label>
@@ -34,9 +34,9 @@
                     <label class="complaint-form-label" for="Gender">Gender </label>
                     <select name="gender" required class="form-control" id="gender" style="margin-top: 10px">
                         <option value="">Choose...</option>
-                        <option value="2">Male</option>
-                        <option value="3">Female</option>
-                        <option value="4">Others</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4">
@@ -59,9 +59,9 @@
                     <label class="complaint-form-label" for="current_status">Current Status</label>
                     <select name="current_status" class="form-control" id="current_status">
                         <option value="">Choose...</option>
-                        <option value="1">In Prison</option>
-                        <option value="2">On Bail</option>
-                        <option value="3">Released</option>
+                        <option value="In Prison">In Prison</option>
+                        <option value="On Bail">On Bail</option>
+                        <option value="Released">Released</option>
                     </select>
 
                 </div>

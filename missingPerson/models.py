@@ -18,4 +18,4 @@ class missingPersonInfo(models.Model):
     image = models.ImageField(default='default.jpg',upload_to='media/missing_person_pics')
 
     def __str__(self):
-        return self.firstName
+        return self.firstName + " " + self.lastname

@@ -2,4 +2,9 @@ from django.contrib import admin
 from .models import complaintsInfo
 # Register your models here.
 
-admin.site.register(complaintsInfo)
+
+class complaintsInfoAdmin(admin.ModelAdmin):
+    readonly_fields = ('fullName','contact','email','flatno', 'address' ,'city' ,'state' ,'country', 'datetime',
+                       'crime' ,'desc',)
+
+admin.site.register(complaintsInfo,complaintsInfoAdmin)

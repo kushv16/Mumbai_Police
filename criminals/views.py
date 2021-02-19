@@ -11,7 +11,7 @@ def addCriminals(request):
 
 
 def addCriminals_form_submission(request):
-    fullName = request.POST['fullName']
+    firstname = request.POST['fullName']
     lastname = request.POST['lastname']
     age = request.POST['age']
     gender = request.POST['gender']
@@ -24,7 +24,7 @@ def addCriminals_form_submission(request):
     desc = request.POST['desc']
     image = request.POST['image']
 
-    criminals_info = criminalsInfo(fullName=fullName,lastname=lastname,age=age,gender=gender,address=address,pincode=pincode,prison_sentence=prison_sentence,
+    criminals_info = criminalsInfo(firstname=firstname,lastname=lastname,age=age,gender=gender,address=address,pincode=pincode,prison_sentence=prison_sentence,
                                    current_status=current_status,datetime=datetime,crime=crime,desc=desc,image=image)
 
     criminals_info.save()

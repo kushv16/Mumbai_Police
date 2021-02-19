@@ -10,8 +10,8 @@ class stolenVehiclesInfo(models.Model):
     chassis_no = models.CharField(max_length=50,default='null')
     engine_no = models.CharField(max_length=50,default='null')
     datetime = models.DateTimeField(blank=True,null=True,default=timezone.now)
-    police_station = models.TextField(default='null')
-    desc = models.TextField(default="null")
+    police_station = models.CharField(max_length=50,default='null')
+    desc = models.CharField(max_length=250,default="null")
 
     def __str__(self):
         return self.fullName

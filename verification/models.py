@@ -30,4 +30,4 @@ class VerificationInfo(models.Model):
     desc = models.TextField(default="Not Applicable")
 
     def __str__(self):
-        return self.PropOwnerFullName
+        return self.propOwnerFullName
