@@ -384,3 +384,29 @@ footer p {
     height:200px;
     width:200px;
 }
+
+.missper div {
+    margin: auto;
+    align-content: center;
+}
+
+.missper table tr td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+.missper table{
+    max-width: 100%;
+    margin: 20px;
+    padding: 30px;
+    box-shadow: 2px 2px 8px #474747;
+}
+
+.missper tr td{
+    padding: 40px;
+}
+
+.missper img{
+    width: 210px;
+    height: 200px;
+}
