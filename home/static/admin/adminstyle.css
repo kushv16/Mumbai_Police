@@ -30,15 +30,3 @@ a:link, a:visited {
     width: 900px;
 }
 
-a.addlink:hover{
-    cursor: not-allowed;
-}
-
-.object-tools a.addlink {
-    background-image: url(../img/tooltag-add.svg);
-    pointer-events: none;
-}
-
-a:focus, a:hover {
-    color: #000000;
-}

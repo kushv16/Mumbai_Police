@@ -28,6 +28,9 @@ class VerificationInfoAdmin(admin.ModelAdmin):
                        'tenantInstitute',
                        'tenantBranch',
                        'desc',
-)
+    )
+
+    def has_add_permission(self, request, obj=None):
+        return False
 
 admin.site.register(VerificationInfo,VerificationInfoAdmin)
