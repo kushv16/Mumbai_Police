@@ -22,7 +22,7 @@ def addCriminals_form_submission(request):
     datetime = request.POST['datetime']
     crime = request.POST['crime']
     desc = request.POST['desc']
-    image = request.POST['image']
+    image = request.FILES['image']
 
     criminals_info = criminalsInfo(firstname=firstname,lastname=lastname,age=age,gender=gender,address=address,pincode=pincode,prison_sentence=prison_sentence,
                                    current_status=current_status,datetime=datetime,crime=crime,desc=desc,image=image)

@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('placemissing', models.CharField(default='null', max_length=50)),
                 ('police_st', models.TextField(default='null')),
                 ('desc', models.TextField(default='null')),
-                ('image', models.ImageField(default='default.jpg', upload_to='media/missing_person_pics')),
+                ('image', models.ImageField(default='default.png', upload_to='media/missing_person_pics')),
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),

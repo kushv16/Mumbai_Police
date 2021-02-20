@@ -7,7 +7,7 @@
             <h3 align="center" style="font-size:40px"><b>Mis<u style="text-decoration-color:#5f41ba">sing Pers</u>ons</b></h3><br>
         </div>
 
-        <form action="{% url 'missingPerson_form_submission' %}" method="post">
+        <form action="{% url 'missingPerson_form_submission' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -171,8 +171,9 @@
 
              <div class="form-group">
                 <small><i style="font-size: 13px">Max 5 MB</i></small>
-                <p style="margin: 0px">Select Files to Upload</p>
-                <input style="margin: 2px" type="file" autocomplete="nope" multiple="" name="image">
+                 <br>
+                 <label style="margin: 0" for="image">Select image:</label>
+                <input style="margin: 2px" type="file" multiple="" id="image" name="image" accept="image/*">
             </div>
 
 

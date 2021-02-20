@@ -21,7 +21,7 @@ def missingPerson_form_submission(request):
     placemissing = request.POST['placemissing']
     police_st = request.POST['police_st']
     desc = request.POST['desc']
-    image = request.POST['image']
+    image = request.FILES['image']
     user = request.user
     missingPerson_info = missingPersonInfo(user=user, firstName=firstName,lastname=lastname,gender=gender,age=age,color=color,
                                           height=height,datetime=datetime,placemissing=placemissing,police_st=police_st,

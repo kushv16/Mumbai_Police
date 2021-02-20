@@ -38,7 +38,7 @@ class criminalsInfo(models.Model):
     current_status = models.CharField(max_length=50, choices=STATUS,default='null')
     datetime = models.DateTimeField(blank=True,null=True,default=timezone.now)
     desc = models.CharField(max_length=250,default='null')
-    image = models.ImageField(default='default.jpg',upload_to='criminal_pics')
+    image = models.ImageField(default='default.png',upload_to='criminal_pics')
 
 
     def __str__(self):
