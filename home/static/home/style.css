@@ -313,17 +313,12 @@ footer p {
     margin:50px;
     display:grid;
     grid-template-columns: 2fr 2fr 2fr;
-    grid-gap:100px;
-}
-
-.card-wrapper div
-{
-    padding:10px;
+    grid-gap:10px;
 }
 
 .card-wrapper img
 {
-    height: 200px;
+    height: 80px;
     background: #f7f7f7
 }
 
@@ -331,7 +326,7 @@ footer p {
 {
     padding:20px;
     border: 1px solid black;
-    border-radius:20%;
+    /*border-radius:20%;*/
 }
 
 .services-div:hover
