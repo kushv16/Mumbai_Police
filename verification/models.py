@@ -4,6 +4,11 @@ from django.db import models
 # Create your models here.
 
 class VerificationInfo(models.Model):
+    admin_status = (
+        ('under scrutiny','Under Scrutiny'),
+        ('approved','Approved'),
+        ('rejected','Rejected')
+    )
     propOwnerFullName = models.CharField(max_length=50,default='-')
     propOwnerContact = models.CharField(max_length=30,default='-')
     propOwnerEmail = models.EmailField(default='-')
@@ -28,6 +33,7 @@ class VerificationInfo(models.Model):
     tenantInstitute = models.CharField(max_length=50 , default="N.A.")
     tenantBranch = models.CharField(max_length=50, default="N.A.")
     desc = models.CharField(max_length=250,default="N.A.")
+    admin_status = models.CharField(max_length=30,default='under scrutiny')
 
     def __str__(self):
         return self.tenantFullName

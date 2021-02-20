@@ -1,7 +1,8 @@
 from django.contrib import admin
+
+from complaints.admin import complaint_status_approve, complaint_status_reject
 from .models import VerificationInfo
 # Register your models here.
-
 
 class VerificationInfoAdmin(admin.ModelAdmin):
     readonly_fields = ('propOwnerFullName',
@@ -30,7 +31,17 @@ class VerificationInfoAdmin(admin.ModelAdmin):
                        'desc',
     )
 
+
+    list_display = ['propOwnerFullName','tenantFullName','tenantReason', 'admin_status']
+    ordering = ['propOwnerFullName','tenantFullName']
+    actions = [complaint_status_approve,complaint_status_reject]
+
+    search_fields = ('propOwnerFullName',"tenantFullName","tenantReason")
+    list_filter = ['tenantReason','admin_status']
+
     def has_add_permission(self, request, obj=None):
         return False
+
+
 
 admin.site.register(VerificationInfo,VerificationInfoAdmin)

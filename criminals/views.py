@@ -11,7 +11,7 @@ def addCriminals(request):
 
 
 def addCriminals_form_submission(request):
-    firstname = request.POST['fullName']
+    firstname = request.POST['firstname']
     lastname = request.POST['lastname']
     age = request.POST['age']
     gender = request.POST['gender']

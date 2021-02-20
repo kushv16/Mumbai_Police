@@ -21,7 +21,6 @@ class criminalsInfo(models.Model):
         ('theft', 'Theft'),
         ('others', 'Others'),
     )
-
     STATUS=(
         ('in prison','In Prison'),
         ('on bail','On Bail'),
@@ -30,7 +29,7 @@ class criminalsInfo(models.Model):
     firstname = models.CharField(max_length=50,default='null')
     lastname = models.CharField(max_length=50,default='null')
     age = models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(100)])
-    gender = models.CharField(max_length=5, choices=GENDER,default='null')
+    gender = models.CharField(max_length=10, choices=GENDER,default='null')
     address = models.CharField(max_length=100,default='null')
     pincode = models.PositiveIntegerField(default=000000, validators=[MinValueValidator(100000), MaxValueValidator(999999)])
     prison_sentence = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
