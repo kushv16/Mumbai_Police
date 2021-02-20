@@ -409,3 +409,9 @@ footer p {
     width: 210px;
     height: 200px;
 }
+
+table
+{
+    table-layout: fixed;
+    width: 1000px;
+}
