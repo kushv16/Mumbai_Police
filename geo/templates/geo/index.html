@@ -10,13 +10,13 @@
 		#gis {width: 80%;height:500px;}
 	</style>
 	<link rel="stylesheet" type="text/css" href="{% static 'routing/leaflet-routing-machine.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}">
 	<script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}" >	</script>
-	<script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.min.js' %}" ></script>
+	<script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}" ></script>
     <script type="text/javascript" src="{% static 'routing/leaflet-routing-machine.js' %}" ></script>
 </head>
 <body>
-<h3>Welcome to Mumbai Police Geo Services you are here: {{ lat }}, {{ lng }}</h3>
+<h3>Welcome to Mumbai Police Geo Services {{ lat }}, {{ lng }}!</h3>
 <br>
 <script type="text/javascript">
 	function our_layers(map,options){
