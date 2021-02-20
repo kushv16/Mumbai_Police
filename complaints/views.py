@@ -19,8 +19,9 @@ def complaints_form_submission(request):
     datetime = request.POST['datetime']
     crime = request.POST['crime']
     desc = request.POST['desc']
+    user = request.user
 
-    complaints_info = complaintsInfo(fullName=fullName, contact=contact, email=email, flatno=flatno, address=address,
+    complaints_info = complaintsInfo(user=user,fullName=fullName, contact=contact, email=email, flatno=flatno, address=address,
                                      city=city, state=state, country=country, datetime=datetime, crime=crime, desc=desc)
 
     complaints_info.save()

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.utils import timezone
 from django.db import models
 
@@ -9,6 +10,7 @@ class VerificationInfo(models.Model):
         ('approved','Approved'),
         ('rejected','Rejected')
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     propOwnerFullName = models.CharField(max_length=50,default='-')
     propOwnerContact = models.CharField(max_length=30,default='-')
     propOwnerEmail = models.EmailField(default='-')

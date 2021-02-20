@@ -17,8 +17,8 @@ def stolenVehicles_form_submission(request):
     datetime = request.POST['datetime']
     police_station = request.POST['police_station']
     desc = request.POST['desc']
-
-    stolenVehicles_info = stolenVehiclesInfo(fullName=fullName,contact=contact,model_name=model_name,
+    user = request.user
+    stolenVehicles_info = stolenVehiclesInfo(user=user,fullName=fullName,contact=contact,model_name=model_name,
                                              reg_no=reg_no,chassis_no=chassis_no,engine_no=engine_no,
                                              datetime=datetime,police_station=police_station,desc=desc)
 

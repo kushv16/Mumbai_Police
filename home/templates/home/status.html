@@ -2,10 +2,87 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>
-    {% for name in first_name %}
-       {{ name }}
-        <br>
+
+    {{ admin_status }}
+
+{% for missing in Missing %}
+    {% if missing.admin_status == "approved"%}
+        <div>
+            <h1> Approved Complaints </h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Date and Time</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">{{ missing.user }}</th>
+                    <td>{{ missing.firstName }}</td>
+                    <td>{{ missing.lastname }}</td>
+                    <td>{{ missing.datetime }}</td>
+                    <td>{{ missing.admin_status }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    {% elif missing.admin_status == "rejected" %}
+        <div>
+            <h1> Rejected Complaints </h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Date and Time</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">{{ missing.user }}</th>
+                    <td>{{ missing.firstName }}</td>
+                    <td>{{ missing.lastname }}</td>
+                    <td>{{ missing.datetime }}</td>
+                    <td>{{ missing.admin_status }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    {% elif  missing.admin_status == "under scrutiny" %}
+        <div>
+            <h1> Pending Complaints </h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Date and Time</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">{{ missing.user }}</th>
+                    <td>{{ missing.firstName }}</td>
+                    <td>{{ missing.lastname }}</td>
+                    <td>{{ missing.datetime }}</td>
+                    <td>{{ missing.admin_status }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>Sorry , We do not have any pending complaints mapped with this username.</p>
+    {% endif %}
     {% endfor %}
-    </h1>
+
 {% endblock %}
+

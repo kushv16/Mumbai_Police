@@ -18,6 +18,7 @@ class complaintsInfo(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
     )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     fullName = models.CharField(max_length=50,default='null')
     contact = models.CharField(max_length=30,default='null')
     email = models.EmailField(default='null')

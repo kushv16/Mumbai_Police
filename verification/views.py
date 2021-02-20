@@ -34,8 +34,9 @@ def verification_form_submission(request):
     tenantInstitute = request.POST['tenantInstitute']
     tenantBranch = request.POST['tenantBranch']
     desc = request.POST['desc']
+    user = request.POST['user']
 
-    verification_info = VerificationInfo(propOwnerFullName=propOwnerFullName,propOwnerContact=propOwnerContact,propOwnerEmail=propOwnerEmail,
+    verification_info = VerificationInfo(user=user,propOwnerFullName=propOwnerFullName,propOwnerContact=propOwnerContact,propOwnerEmail=propOwnerEmail,
                                          propOwnerFlatno=propOwnerFlatno,propOwnerAddress=propOwnerAddress,propOwnerCity=propOwnerCity,
                                          propOwnerState=propOwnerState,propOwnerCountry=propOwnerCountry,tenantFullName=tenantFullName,
                                          tenantContact=tenantContact,tenantEmail=tenantEmail,tenantFlatno=tenantFlatno,tenantAddress=tenantAddress,
