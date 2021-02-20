@@ -36,6 +36,8 @@
 {#                <a class="btn btn-nav" href="{% url 'view-missing-person' %}">Missing Person</a>#}
                 <a class="btn geo-button" href="{% url 'map' %}">Geo-Services</a>
                 <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
+                <a class="btn btn-nav" href="{% url 'status' %}">Status</a>
+
             {%else %}
                 <a class="btn btn-nav" href="{% url 'register' %}">Register</a>
                 <a class="btn btn-nav" href="{% url 'login' %}">Login</a>

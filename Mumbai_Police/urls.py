@@ -25,6 +25,7 @@ from eChallan import views as eChallan_views
 from missingPerson import views as missingPerson_views
 from stolenVehicles import views as stolenVehicles_views
 from verification import views as verification_views
+from home import views as home_views
 
 
 urlpatterns = [
@@ -46,4 +47,5 @@ urlpatterns = [
     path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),
     path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
+    path('status',home_views.status,name='status'),
 ]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

@@ -1,0 +1,11 @@
+
+{% extends 'home/base.html' %}
+
+{% block content %}
+    <h1>
+    {% for name in first_name %}
+       {{ name }}
+        <br>
+    {% endfor %}
+    </h1>
+{% endblock %}
