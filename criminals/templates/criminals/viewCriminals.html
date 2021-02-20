@@ -5,11 +5,38 @@
     </head>
 {% endblock %}
 {% block content %}
-    {% for criminal in Criminals %}
-        <div>
-            <p>{{ criminal.fullName }}</p>
-            <p>{{ criminal.address }}</p>
-            <img src="{{criminal.image.url}}">
+    <div class="section section-white">
+        <div class="container">
+            <div class="section-heading">
+                <h3 align="center" style="font-size:40px"><b>Crim<u style="text-decoration-color:#5f41ba">inal Rec</u>ords</b></h3><br>
+            </div>
+    </div>
+        {% for criminal in Criminals %}
+
+        <div class="missper" style="overflow-x: auto ;padding:30px;">
+            <table style="align-items: center">
+                <tr>
+                    <td rowspan="4">
+                        <img src="{{criminal.image.url}}">
+                        <br><br><br>
+                        <h5><b>Name</b> : {{ criminal.firstname }} {{ criminal.lastname }}</h5>
+                    </td>
+                    <td><b>Age: </b>{{ criminal.age }}</td>
+                    <td><b>Gender: </b>{{ criminal.gender }}</td>
+                </tr>
+                <tr>
+                    <td><b>Prison Sentenced: </b>{{ criminal.prison_sentence }}</td>
+                    <td><b>Height: </b>{{ criminal.height }}</td>
+                </tr>
+                <tr>
+                    <td><b>Date Captured: </b>{{ criminal.date }}</td>
+                    <td><b>Current Status: </b>{{ criminal.current_status }}</td>
+                </tr>
+                <tr>
+                    <td><b>Crime Committed: </b>{{ criminal.crime }}</td>
+                    <td><b>Description: </b>{{ criminal.desc }}</td>
+                </tr>
+            </table>
         </div>
     {% endfor %}
 {% endblock %}

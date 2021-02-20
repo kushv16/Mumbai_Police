@@ -30,16 +30,14 @@ class criminalsInfo(models.Model):
     lastname = models.CharField(max_length=50,default='null')
     age = models.PositiveIntegerField(default=10, validators=[MinValueValidator(1), MaxValueValidator(100)])
     gender = models.CharField(max_length=10, choices=GENDER,default='null')
-    address = models.CharField(max_length=100,default='null')
-    pincode = models.PositiveIntegerField(default=000000, validators=[MinValueValidator(100000), MaxValueValidator(999999)])
+    height = models.CharField(max_length=100,default='null')
     prison_sentence = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     crime = models.CharField(max_length=50, choices=CRIMES,default='null')
     current_status = models.CharField(max_length=50, choices=STATUS,default='null')
-    datetime = models.DateTimeField(blank=True,null=True,default=timezone.now)
+    date = models.DateField(blank=True,null=True,default=timezone.now)
     desc = models.CharField(max_length=250,default='null')
     image = models.ImageField(default='default.png',upload_to='criminal_pics')
 
 
     def __str__(self):
         return self.firstname+" "+self.lastname
-

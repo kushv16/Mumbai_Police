@@ -5,11 +5,11 @@ from .models import criminalsInfo
 
 class criminalsInfoAdmin(admin.ModelAdmin):
 
-    list_display = ['firstname','lastname','crime','current_status','datetime',]
+    list_display = ['firstname','lastname','crime','current_status','date',]
     ordering = ['firstname','lastname']
 
-    search_fields = ('firstname','lastname',"crime","current_status","datetime")
-    list_filter = ['datetime','crime','current_status']
+    search_fields = ('firstname','lastname',"crime","current_status","date")
+    list_filter = ['date','crime','current_status']
 
 
 
