@@ -203,6 +203,13 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mumbaipolice366@gmail.com'
+EMAIL_HOST_PASSWORD = 'diveshkushmarmik'
+EMAIL_USE_TLS = True
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
 GEOS_LIBRARY_PATH = os.environ.get('GEOS_LIBRARY_PATH')
