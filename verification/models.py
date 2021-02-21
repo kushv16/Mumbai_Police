@@ -35,8 +35,9 @@ class VerificationInfo(models.Model):
     tenantInstitute = models.CharField(max_length=50 , default="N.A.")
     tenantBranch = models.CharField(max_length=50, default="N.A.")
     desc = models.CharField(max_length=250,default="N.A.")
-    admin_status = models.CharField(max_length=30,default='under scrutiny')
+    admin_status = models.CharField(max_length=30,choices=admin_status,default='under scrutiny')
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
+def __str__(self):
         return self.tenantFullName
 

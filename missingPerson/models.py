@@ -25,5 +25,7 @@ class missingPersonInfo(models.Model):
     desc = models.TextField(default='null')
     image = models.ImageField(default='default.png',upload_to='missing_person_pics')
     admin_status = models.CharField(max_length=50, choices=admin_status,default='null')
+    created_at = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return self.firstName + " " + self.lastname

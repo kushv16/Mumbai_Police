@@ -387,3 +387,8 @@ table
 .table td{
     text-transform: capitalize;
 }
+
+.thead-custom{
+    background: rgba(94,106,176,0.8);
+    color:white;
+}
