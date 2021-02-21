@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from .models import Maha, Incidences
+from .models import Maha0, Incidences
 from django.views.generic import TemplateView
 from django.core.serializers import serialize
 from django.contrib.gis.geoip2 import GeoIP2
 from django.http import HttpResponse
+from .load_layer import run
+
 
 def map_home(request):
+	# run()
 	x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
 	if x_forwarded_for:
 		ip = x_forwarded_for.split(',')[0]
@@ -22,7 +25,7 @@ def map_home(request):
 
 
 def maha_datasets(request):
-	names = serialize('geojson', Maha.objects.all())
+	names = serialize('geojson', Maha0.objects.all())
 	return HttpResponse(names,content_type='json')
 
 def point_datasets(request):

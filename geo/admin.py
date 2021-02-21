@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Maha, Incidences
+from .models import Maha0, Incidences
 from leaflet.admin import LeafletGeoAdmin
 
 
@@ -10,4 +10,4 @@ class MahaAdmin(LeafletGeoAdmin):
     pass
 
 admin.site.register(Incidences, IncidencesAdmin)
-admin.site.register(Maha, MahaAdmin)
+admin.site.register(Maha0, MahaAdmin)

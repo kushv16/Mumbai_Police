@@ -9,9 +9,9 @@
 	<style type="text/css">
 		#gis {width: 80%;height:500px;}
 	</style>
+    <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}" >	</script>
 	<link rel="stylesheet" type="text/css" href="{% static 'routing/leaflet-routing-machine.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.css' %}">
-	<script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}" >	</script>
 	<script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}" ></script>
     <script type="text/javascript" src="{% static 'routing/leaflet-routing-machine.js' %}" ></script>
 </head>
@@ -29,12 +29,6 @@
 			attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 		});
 		var datasets = new L.GeoJSON.AJAX("{% url 'data' %}",{
-			style: function colors(feature){
-
-			},
-			onEachFeature: function(feature,layer){
-				layer.bindPopup(feature.properties.type.toString());
-			}
 
 		});
 
