@@ -383,3 +383,7 @@ table
     table-layout: fixed;
     width: 1000px;
 }
+
+.table td{
+    text-transform: capitalize;
+}

@@ -9,7 +9,7 @@ class stolenVehiclesInfo(models.Model):
         ('approved', 'Approved'),
         ('rejected', 'Rejected'),
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     fullName = models.CharField(max_length=50,default='null')
     contact = models.CharField(max_length=50,default='null')
     model_name = models.CharField(max_length=50,default='null')

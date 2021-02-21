@@ -18,4 +18,5 @@ def status(request):
     missing_person = missingPersonInfo.objects.filter(user_id=user_id)
     complaints = complaintsInfo.objects.filter(user_id=user_id)
     verification = VerificationInfo.objects.filter(user_id=user_id)
-    return render(request,'home/status.html', {'Missing':missing_person})
+    stolenVehicles = stolenVehiclesInfo.objects.filter(user_id=user_id)
+    return render(request,'home/status.html',context={'Missing':missing_person ,'Complaints':complaints,'Verification':verification,'stolenVehicles':stolenVehicles})

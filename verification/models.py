@@ -10,7 +10,7 @@ class VerificationInfo(models.Model):
         ('approved','Approved'),
         ('rejected','Rejected')
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     propOwnerFullName = models.CharField(max_length=50,default='-')
     propOwnerContact = models.CharField(max_length=30,default='-')
     propOwnerEmail = models.EmailField(default='-')

@@ -3,8 +3,6 @@
 
 {% block content %}
 
-    {{ admin_status }}
-
 {% for missing in Missing %}
     {% if missing.admin_status == "approved"%}
         <div>
@@ -84,5 +82,241 @@
     {% endif %}
     {% endfor %}
 
-{% endblock %}
+    {% for complaint in Complaints %}
+        {% if complaint.admin_status == "approved"%}
+            <div>
+                <h1> Approved Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ complaint.user }}</th>
+                        <td>{{ complaint.firstName }}</td>
+                        <td>{{ complaint.lastname }}</td>
+                        <td>{{ complaint.datetime }}</td>
+                        <td>{{ complaint.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% elif missing.admin_status == "rejected" %}
+            <div>
+                <h1> Rejected Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ complaint.user }}</th>
+                        <td>{{ complaint.firstName }}</td>
+                        <td>{{ complaint.lastname }}</td>
+                        <td>{{ complaint.datetime }}</td>
+                        <td>{{ complaint.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 
+        {% elif  complaint.admin_status == "under scrutiny" %}
+            <div>
+                <h1> Pending Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ complaint.user }}</th>
+                        <td>{{ complaint.firstName }}</td>
+                        <td>{{ complaint.lastname }}</td>
+                        <td>{{ complaint.datetime }}</td>
+                        <td>{{ complaint.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>Sorry , We do not have any pending complaints mapped with this username.</p>
+        {% endif %}
+    {% endfor %}
+
+    {% for verification in Verification %}
+        {% if verification.admin_status == "approved"%}
+            <div>
+                <h1> Approved Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ missing.user }}</th>
+                        <td>{{ verification.firstName }}</td>
+                        <td>{{ verification.lastname }}</td>
+                        <td>{{ verification.datetime }}</td>
+                        <td>{{ verification.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% elif verification.admin_status == "rejected" %}
+            <div>
+                <h1> Rejected Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ verification.user }}</th>
+                        <td>{{ verification.firstName }}</td>
+                        <td>{{ verification.lastname }}</td>
+                        <td>{{ verification.datetime }}</td>
+                        <td>{{ verification.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        {% elif  verification.admin_status == "under scrutiny" %}
+            <div>
+                <h1> Pending Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ verification.user }}</th>
+                        <td>{{ verification.firstName }}</td>
+                        <td>{{ verification.lastname }}</td>
+                        <td>{{ verification.datetime }}</td>
+                        <td>{{ verification.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>Sorry , We do not have any pending complaints mapped with this username.</p>
+        {% endif %}
+    {% endfor %}
+
+    {% for stolenVehicle in stolenVehicles %}
+        {% if stolenVehicle.admin_status == "approved"%}
+            <div>
+                <h1> Approved Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ stolenVehicle.user }}</th>
+                        <td>{{ stolenVehicle.firstName }}</td>
+                        <td>{{ stolenVehicle.lastname }}</td>
+                        <td>{{ stolenVehicle.datetime }}</td>
+                        <td>{{ stolenVehicle.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% elif missing.admin_status == "rejected" %}
+            <div>
+                <h1> Rejected Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ stolenVehicle.user }}</th>
+                        <td>{{ stolenVehicle.firstName }}</td>
+                        <td>{{ stolenVehicle.lastname }}</td>
+                        <td>{{ stolenVehicle.datetime }}</td>
+                        <td>{{ stolenVehicle.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        {% elif  missing.admin_status == "under scrutiny" %}
+            <div>
+                <h1> Pending Complaints </h1>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Date and Time</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">{{ stolenVehicle.user }}</th>
+                        <td>{{ stolenVehicle.firstName }}</td>
+                        <td>{{ stolenVehicle.lastname }}</td>
+                        <td>{{ stolenVehicle.datetime }}</td>
+                        <td>{{ stolenVehicle.admin_status }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p>Sorry , We do not have any pending complaints mapped with this username.</p>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
