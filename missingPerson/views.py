@@ -6,12 +6,11 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import missingPersonInfo
-import os
-
+from secret_keys import *
 @login_required
 def missingPerson(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY': os.environ.get('reCAPTCHA_SITE_KEY'),
+        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
     }
     return render(request,'missingPerson/missingPerson.html', secrets)
 

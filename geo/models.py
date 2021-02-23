@@ -9,9 +9,6 @@ class Incidences(models.Model):
     location = models.PointField(srid=4326, max_length=500)
     objects = GeoManager()
 
-    def __unicode__(self):
-        return self.name
-
     class Meta:
         verbose_name_plural = 'Incidences'
 
@@ -88,5 +85,4 @@ class Maha0(models.Model):
     islands = models.FloatField()
     ldc = models.FloatField()
     geom = models.MultiPolygonField(srid=4326)
-    def __unicode__(self):
-        return self.name_engli
+

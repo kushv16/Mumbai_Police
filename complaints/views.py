@@ -4,12 +4,12 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import complaintsInfo
 from random import randint
-import os
+from secret_keys import *
 
 @login_required
 def complaints(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY' : os.environ.get('reCAPTCHA_SITE_KEY'),
+        'reCAPTCHA_SITE_KEY' : reCAPTCHA_SITE_KEY,
     }
     return render(request,'complaints/complaints.html', secrets)
 

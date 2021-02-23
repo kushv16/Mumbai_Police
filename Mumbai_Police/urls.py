@@ -51,5 +51,6 @@ urlpatterns = [
     path('stolenVehicles/stolenVehicles_form_submission',stolenVehicles_views.stolenVehicles_form_submission,name='stolenVehicles_form_submission'),
     path('verification/',verification_views.verification,name='verification'),
     path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
-    path('status',home_views.status,name='status'),
+    path('status/',home_views.status,name='status'),
+    path('verify-email/', user_views.verifyEmail, name='verify-email')
 ]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)

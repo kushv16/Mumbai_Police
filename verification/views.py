@@ -1,16 +1,15 @@
 from random import randint
-
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import VerificationInfo
-import os
+from secret_keys import *
 
 @login_required
 def verification(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY': os.environ.get('reCAPTCHA_SITE_KEY'),
+        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
     }
     return render(request,'verification/verification.html', secrets)
 
