@@ -25,6 +25,7 @@ class missingPersonInfo(models.Model):
     desc = models.TextField(default='null')
     image = models.ImageField(default='default.png',upload_to='missing_person_pics')
     admin_status = models.CharField(max_length=50, choices=admin_status,default='under scrutiny')
+    admin_message = models.CharField(max_length=250,default="Your complaint is under review.We will get back to you soon.")
     created_at = models.DateTimeField(auto_now_add=True)
     ack_no = models.CharField(max_length=10,blank=True)
 

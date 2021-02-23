@@ -22,7 +22,7 @@
                     <td>{{ missing.firstName }} {{ missing.lastname }}</td>
                     <td>Missing Complaint</td>
                     <td>{{ missing.created_at }}</td>
-                    <td class="td-status">{{ missing.admin_status }}</td>
+                    <td class="td-status" data-toggle="tooltip" data-placement="right" title="{{ missing.admin_message}}">{{ missing.admin_status }}</td>
                 </tr>
             </tbody>
     {% endfor %}
@@ -34,7 +34,7 @@
                 <td>{{ complaint.fullName }}</td>
                 <td>Crime Complaint</td>
                 <td>{{ complaint.created_at }}</td>
-                <td class="td-status">{{ complaint.admin_status }}</td>
+                <td class="td-status" data-toggle="tooltip" data-placement="right" title="{{ complaint.admin_message}}">{{ complaint.admin_status }}</td>
             </tr>
         </tbody>
     {% endfor %}
@@ -46,7 +46,7 @@
             <td>{{ verification.tenantFullName }}</td>
             <td>Tenant Verification</td>
             <td>{{ verification.created_at }}</td>
-            <td class="td-status">{{ verification.admin_status }}</td>
+            <td class="td-status" data-toggle="tooltip" data-placement="right" title="{{ verification.admin_message}}">{{ verification.admin_status }}</td>
         </tr>
         </tbody>
     {% endfor %}
@@ -58,7 +58,7 @@
             <td>{{ stolenVehicle.fullName }}</td>
             <td>Stolen Vehicle Complaint</td>
             <td>{{ stolenVehicle.created_at }}</td>
-            <td class="td-status">{{ stolenVehicle.admin_status }}</td>
+            <td class="td-status" data-toggle="tooltip" data-placement="right" title="{{ stolenVehicle.admin_message}}">{{ stolenVehicle.admin_status }}</td>
         </tr>
         </tbody>
     {% endfor %}
@@ -67,23 +67,36 @@
 </div>
 
     <script>
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
     let table_status_style = document.querySelectorAll('.td-status')
+        console.log(table_status_style)
+        for(let i=0;i<table_status_style.length;i++)
+        {
+            console.log(table_status_style[i].innerHTML)
+        }
+
     for(let i=0;i<table_status_style.length;i++)
     {
         if(table_status_style[i].innerHTML=='approved')
         {
             table_status_style[i].parentElement.classList.add('table-success')
+            console.log('approved')
         }
         else if(table_status_style[i].innerHTML=='rejected')
         {
             table_status_style[i].parentElement.classList.add('table-danger')
+            console.log('rejected')
         }
         else
         {
             table_status_style[i].parentElement.classList.add('table-secondary')
+            console.log('pending')
         }
 
     }
-
     </script>
 {% endblock %}

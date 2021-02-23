@@ -21,10 +21,11 @@ class complaintsInfoAdmin(admin.ModelAdmin):
     ordering = ['fullName']
     actions = [complaint_status_approve,complaint_status_reject]
     readonly_fields = ('fullName','contact','email','flatno', 'address' ,'city' ,'state' ,'country', 'datetime',
-                        'desc',)
+                        'desc','user','ack_no','crime')
 
     search_fields = ('fullName',"city","datetime","crime")
     list_filter = ['datetime','crime','admin_status']
+
     def has_add_permission(self, request, obj=None):
         return False
 

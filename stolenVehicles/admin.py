@@ -17,7 +17,7 @@ from .models import stolenVehiclesInfo
 
 class stolenVehiclesInfoAdmin(admin.ModelAdmin):
     readonly_fields = ('fullName', 'contact' ,'model_name' ,'reg_no' ,'chassis_no', 'engine_no',
-                       'datetime' ,'police_station', 'desc',)
+                       'datetime' ,'police_station', 'desc','user','ack_no')
 
     list_display = ['fullName','model_name','datetime', 'admin_status']
     ordering = ['fullName']

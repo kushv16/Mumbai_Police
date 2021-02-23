@@ -36,6 +36,5 @@ def stolenVehicles_form_submission(request):
                                              datetime=datetime,police_station=police_station,desc=desc,ack_no=ack_no)
 
     stolenVehicles_info.save()
-
     messages.success(request,f'Your Complaint has been filed and your acknowledgment id is {ack_no}.Our team will shortly get in touch with you.')
     return redirect('home')

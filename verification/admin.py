@@ -29,6 +29,9 @@ class VerificationInfoAdmin(admin.ModelAdmin):
                        'tenantInstitute',
                        'tenantBranch',
                        'desc',
+                       'user',
+                       'ack_no',
+
     )
 
 
