@@ -7,17 +7,18 @@
             <caption style="caption-side:top">Status of your Filed Complaints.</caption>
             <thead class="thead-custom">
             <tr>
-                <th scope="col">Username</th>
+                <th scope="col">Acknowledgement Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Service Type</th>
                 <th scope="col">Filed on</th>
                 <th scope="col">Status</th>
             </tr>
             </thead>
+
     {% for missing in Missing %}
             <tbody>
                 <tr>
-                    <th scope="row">{{ missing.user }}</th>
+                    <th scope="row">{{ missing.ack_no }}</th>
                     <td>{{ missing.firstName }} {{ missing.lastname }}</td>
                     <td>Missing Complaint</td>
                     <td>{{ missing.created_at }}</td>
@@ -29,7 +30,7 @@
     {% for complaint in Complaints %}
         <tbody>
         <tr>
-                <th scope="row">{{ complaint.user }}</th>
+                <th scope="row">{{ complaint.ack_no }}</th>
                 <td>{{ complaint.fullName }}</td>
                 <td>Crime Complaint</td>
                 <td>{{ complaint.created_at }}</td>
@@ -41,7 +42,7 @@
     {% for verification in Verification %}
         <tbody>
         <tr>
-            <th scope="row">{{ verification.user }}</th>
+            <th scope="row">{{ verification.ack_no }}</th>
             <td>{{ verification.tenantFullName }}</td>
             <td>Tenant Verification</td>
             <td>{{ verification.created_at }}</td>
@@ -53,7 +54,7 @@
     {% for stolenVehicle in stolenVehicles %}
         <tbody>
         <tr>
-            <th scope="row">{{ stolenVehicle.user }}</th>
+            <th scope="row">{{ stolenVehicle.ack_no }}</th>
             <td>{{ stolenVehicle.fullName }}</td>
             <td>Stolen Vehicle Complaint</td>
             <td>{{ stolenVehicle.created_at }}</td>

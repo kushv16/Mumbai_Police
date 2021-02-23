@@ -37,7 +37,8 @@ class VerificationInfo(models.Model):
     desc = models.CharField(max_length=250,default="N.A.")
     admin_status = models.CharField(max_length=30,choices=admin_status,default='under scrutiny')
     created_at = models.DateTimeField(auto_now_add=True)
+    ack_no = models.CharField(max_length=10,blank=True)
 
-def __str__(self):
-        return self.tenantFullName
+    def __str__(self):
+            return self.tenantFullName
 

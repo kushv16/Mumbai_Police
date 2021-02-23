@@ -1,6 +1,9 @@
+from random import randint
+
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import VerificationInfo
 from secret_keys import *
 
@@ -11,6 +14,11 @@ def verification(request):
     }
     return render(request,'verification/verification.html', secrets)
 
+def uniqueId():
+    uniqueId = 'V'
+    for i in range (0,9):
+        uniqueId = uniqueId + str(randint(0,9))
+    return uniqueId
 
 def verification_form_submission(request):
     propOwnerFullName = request.POST['propOwnerFullName']
@@ -38,6 +46,7 @@ def verification_form_submission(request):
     tenantBranch = request.POST['tenantBranch']
     desc = request.POST['desc']
     user = request.user
+    ack_no = uniqueId()
 
     verification_info = VerificationInfo(user=user,propOwnerFullName=propOwnerFullName,propOwnerContact=propOwnerContact,propOwnerEmail=propOwnerEmail,
                                          propOwnerFlatno=propOwnerFlatno,propOwnerAddress=propOwnerAddress,propOwnerCity=propOwnerCity,
@@ -45,7 +54,8 @@ def verification_form_submission(request):
                                          tenantContact=tenantContact,tenantEmail=tenantEmail,tenantFlatno=tenantFlatno,tenantAddress=tenantAddress,
                                          tenantCity=tenantCity,tenantState=tenantState,tenantCountry=tenantCountry,tenantDOB=tenantDOB,tenantReason=tenantReason,
                                          tenantOrganisation=tenantOrganisation,tenantDepartment=tenantDepartment,tenantID=tenantID,tenantInstitute=tenantInstitute,
-                                         tenantBranch=tenantBranch,desc=desc)
+                                         tenantBranch=tenantBranch,desc=desc,ack_no=ack_no)
 
     verification_info.save()
-    return HttpResponseRedirect('/')
+    messages.success(request,f'Your Complaint has been filed and your acknowledgment id is {ack_no}.Our team will shortly get in touch with you.')
+    return redirect('home')

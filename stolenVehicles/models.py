@@ -21,6 +21,7 @@ class stolenVehiclesInfo(models.Model):
     desc = models.CharField(max_length=250,default="null")
     admin_status = models.CharField(max_length=30,choices=admin_status,default='under scrutiny')
     created_at = models.DateTimeField(auto_now_add=True)
+    ack_no = models.CharField(max_length=10,blank=True)
 
-def __str__(self):
-        return self.fullName
+    def __str__(self):
+            return self.fullName

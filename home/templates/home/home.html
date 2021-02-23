@@ -1,6 +1,12 @@
 {% extends 'home/base.html'  %}
 {% block content %}
-
+    {% if messages %}
+        {%for message in messages%}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {%endfor%}
+    {%endif%}
     <div class="section no-bottom-padding" id="Home">
         <div class="row p-20">
             <div class="col-sm-6 text-center banner">

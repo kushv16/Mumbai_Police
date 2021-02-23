@@ -14,7 +14,7 @@
         </div>
         <br>
 
-        <form action="{% url 'verification_form_submission' %}" method="post" onsubmit="submitFunction()">
+        <form action="{% url 'verification_form_submission' %}" method="post">
             {% csrf_token %}
             <div class="section-heading">
               <h3 align="center" style="font-size:20px">Property Owner's Information:</h3><br>
@@ -260,11 +260,6 @@
 
         }
 
-        function submitFunction()
-        {
-            alert("Your complaint has been filed . We will shortly get in touch with you.")
-            window.location.href="{% url 'home' %}"
-        }
 
     </script>
 

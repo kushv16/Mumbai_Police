@@ -11,7 +11,7 @@
             <h3 align="center" style="font-size:40px"><b>Onlin<u style="text-decoration-color:#5f41ba">e Com</u>plaint</b></h3><br>
         </div>
 
-        <form action="{% url 'complaints_form_submission' %}" method="post" onsubmit="submitFunction()">
+        <form action="{% url 'complaints_form_submission' %}" method="post">
             {% csrf_token %}
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -93,8 +93,9 @@
                 <input style="margin: 2px" type="file" autocomplete="nope" multiple="">
             </div>
             <br>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<div class="g-recaptcha" data-sitekey={{ reCAPTCHA_SITE_KEY }}></div>
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey={{ reCAPTCHA_SITE_KEY }}></div>
 
             <br>
             <div class="form-check">
@@ -113,20 +114,9 @@
                 <input id="submit-btn" type="submit" value="Submit" class="submit-btn">
             </div>
 
-
         </form>
-
         <br><br>
-
     </div>
 </div>
-
-    <script>
-        function submitFunction()
-        {
-            alert("Your complaint has been filed . We will shortly get in touch with you.")
-            window.location.href="{% url 'home' %}"
-        }
-    </script>
 
 {% endblock %}
