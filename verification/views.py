@@ -5,12 +5,12 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import VerificationInfo
-from secret_keys import *
+import os
 
 @login_required
 def verification(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
+        'reCAPTCHA_SITE_KEY': os.environ.get('reCAPTCHA_SITE_KEY'),
     }
     return render(request,'verification/verification.html', secrets)
 

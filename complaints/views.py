@@ -3,13 +3,13 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import complaintsInfo
-from secret_keys import *
 from random import randint
+import os
 
 @login_required
 def complaints(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY' : reCAPTCHA_SITE_KEY,
+        'reCAPTCHA_SITE_KEY' : os.environ.get('reCAPTCHA_SITE_KEY'),
     }
     return render(request,'complaints/complaints.html', secrets)
 
