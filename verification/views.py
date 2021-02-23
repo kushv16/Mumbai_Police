@@ -2,11 +2,14 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import VerificationInfo
-
+from secret_keys import *
 
 @login_required
 def verification(request):
-    return render(request,'verification/verification.html')
+    secrets = {
+        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
+    }
+    return render(request,'verification/verification.html', secrets)
 
 
 def verification_form_submission(request):

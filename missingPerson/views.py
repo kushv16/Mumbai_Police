@@ -3,11 +3,15 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import missingPersonInfo
+from secret_keys import *
 # Create your views here.
 
 @login_required
 def missingPerson(request):
-    return render(request,'missingPerson/missingPerson.html')
+    secrets = {
+        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
+    }
+    return render(request,'missingPerson/missingPerson.html', secrets)
 
 
 def missingPerson_form_submission(request):

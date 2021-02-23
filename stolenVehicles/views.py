@@ -2,10 +2,14 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import stolenVehiclesInfo
+from secret_keys import *
 
 @login_required
 def stolenVehicles(request):
-    return render(request,'stolenVehicles/stolenVehicles.html')
+    secrets = {
+        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
+    }
+    return render(request,'stolenVehicles/stolenVehicles.html', secrets)
 
 def stolenVehicles_form_submission(request):
     fullName = request.POST['fullName']

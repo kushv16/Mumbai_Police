@@ -2,10 +2,14 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import complaintsInfo
+from secret_keys import *
 
 @login_required
 def complaints(request):
-    return render(request,'complaints/complaints.html')
+    secrets = {
+        'reCAPTCHA_SITE_KEY' : reCAPTCHA_SITE_KEY,
+    }
+    return render(request,'complaints/complaints.html', secrets)
 
 def complaints_form_submission(request):
     fullName = request.POST['fullName']

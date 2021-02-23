@@ -167,7 +167,7 @@
                 <textarea class="form-control" id="desc" name = "desc" rows="5" required></textarea>
             </div>
 
-            <br><br>
+            <br>
 
              <div class="form-group">
                 <small><i style="font-size: 13px">Max 5 MB</i></small>
@@ -175,6 +175,11 @@
                  <label style="margin: 0" for="image">Select image *</label>
                 <input style="margin: 2px" type="file" multiple="" id="image" name="image" accept="image/*" required>
             </div>
+             <br>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="g-recaptcha" data-sitekey={{ reCAPTCHA_SITE_KEY }}></div>
+
+            <br>
 
 
             <div class="form-check">
