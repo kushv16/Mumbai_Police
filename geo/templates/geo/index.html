@@ -33,6 +33,7 @@
 
 		});
 
+
 		var points = new L.GeoJSON.AJAX("{% url 'incidences' %}",{
 			pointToLayer: function (feature, latlng) {
                 return L.marker(latlng, {
