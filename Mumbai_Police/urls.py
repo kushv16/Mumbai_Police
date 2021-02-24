@@ -52,5 +52,5 @@ urlpatterns = [
     path('verification/',verification_views.verification,name='verification'),
     path('verification/verification_form_submission', verification_views.verification_form_submission, name='verification_form_submission'),
     path('status/',home_views.status,name='status'),
-    path('verify-email/', user_views.verifyEmail, name='verify-email')
+    path('verify-email/', user_views.verify_email_page, name='verify-email')
 ]+static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
