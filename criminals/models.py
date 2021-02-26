@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 from django.utils import timezone
@@ -36,7 +37,8 @@ class criminalsInfo(models.Model):
     current_status = models.CharField(max_length=50, choices=STATUS,default='null')
     date = models.DateField(blank=True,null=True,default=timezone.now)
     desc = models.CharField(max_length=250,default='null')
-    image = models.ImageField(default='default.png',upload_to='criminal_pics')
+    # image = models.ImageField(default='default.png',upload_to='criminal_pics')
+    image = CloudinaryField('image')
 
 
     def __str__(self):

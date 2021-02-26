@@ -13,6 +13,9 @@ import os
 from pathlib import Path
 import dj_database_url
 from secret_keys import *
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
@@ -230,5 +233,11 @@ prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 # DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+
+cloudinary.config(
+  cloud_name = "dhmcjaash",
+  api_key = "678733423572592",
+  api_secret = CLOUDINARY_API_SECRET
+)
 
 
