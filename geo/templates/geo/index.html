@@ -15,9 +15,47 @@
 	<script type="text/javascript" src="{% static 'leaflet-groupedlayercontrol/leaflet.groupedlayercontrol.js' %}" ></script>
     <script type="text/javascript" src="{% static 'routing/leaflet-routing-machine.js' %}" ></script>
     <script type="text/javascript" src="{% static 'dist/leaflet.ajax.js' %}"></script>
+    <link rel = "icon" href ="https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png" type = "image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>Welcome to Mumbai Police Geo Services {{ lat }}, {{ lng }}!</h3>
+<nav class="navbar navbar-expand-sm" style="background-color:rgb(94,106,176)">
+
+    <div class="logo">
+        <a href="{% url 'home' %}"><img src="https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png" alt="Mumbai Police Logo" style="height: 80px;width: 80px"></a>
+        <span class="logo-title">MUMBAI POLICE</span>
+    </div>
+
+    <div class="links-container">
+        <ul class="hide links" style="color:rgb(94,106,176)">
+            <li><a href="{% url 'home' %}#Home" class="scroll-link">Home</a></li>
+            <li><a href="{% url 'home'%}#Services" class="scroll-link">Services</a></li>
+            <li><a href="{% url 'home'%}#About" class="scroll-link">About Us</a></li>
+            <li><a href="{% url 'home'%}#Contact" class="scroll-link">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-btns-div">
+        {% if user.is_authenticated %}
+            <p class="welcome-navbar">Hello, {{ user.username }}</p>
+            <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
+
+        {%else %}
+            <a class="btn btn-nav" href="{% url 'register' %}">Register</a>
+            <a class="btn btn-nav" href="{% url 'login' %}">Sign In</a>
+        {% endif %}
+
+    </div>
+
+</nav>
+<div class="geo-banner">
+    <h3 class="geo-lat-lng">Welcome to Mumbai Police Geo Services!</h3>
+    <h3 class="geo-lat-lng">You are here : {{ lat }}, {{ lng }}!</h3>
+</div>
 <br>
 <script type="text/javascript">
 	function our_layers(map,options){
@@ -82,5 +120,26 @@
 
 </script>
 {% leaflet_map "gis" callback="window.our_layers" %}
+<div class="footer-div">
+    <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 text-center d-flex justify-content-between footer-div">
+        <div class="col-sm-12 col-md-5 col-sm-5 col-xs-12 text-center">
+            <span title="Whats App">Traffic WhatsApp Helpline :</span> <a href="tel:8454999999" title="8454999999">8454999999</a>
+
+        </div>
+        <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+            <span title="Citizen Wall">Citizen Wall :</span> <a href="tel:103" title="103">103</a>
+        </div>
+        <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+            <span title="Control Room">Control Room :</span> <a href="tel:100" title="100">100</a>
+        </div>
+        <div class="col-sm-12 col-md-2 col-sm-2 col-xs-12 text-center">
+            <span title="Elder Line">Elder Line :</span> <a href="tel:1090" title="1090">1090</a>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <span>Copyright © | Developed by Kush, Marmik, Divesh</span>
+    </div>
+</div>
 </body>
 </html>

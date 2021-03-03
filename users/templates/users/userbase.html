@@ -33,6 +33,7 @@
 
         <div class="nav-btns-div">
             {% if user.is_authenticated %}
+                <p class="welcome-navbar">Hello, {{ user.username }}</p>
                 <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
             {% else %}
                 <a class="btn btn-nav" href="{% url 'register' %}">Register</a>

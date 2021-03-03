@@ -11,7 +11,33 @@
         <div class="row p-20">
             <div class="col-sm-6 text-center banner">
                 <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Mumbai_Police_logo.png" alt="Mumbai Police Logo">
-                <h2 class="banner-title">Greater Mumbai Police</h2>
+                <h2 class="banner-title">
+                    <div class="banner-title-word">
+                        <span class="banner-title-letter">G</span>
+                        <span class="banner-title-letter">R</span>
+                        <span class="banner-title-letter">E</span>
+                        <span class="banner-title-letter">A</span>
+                        <span class="banner-title-letter">T</span>
+                        <span class="banner-title-letter">E</span>
+                        <span class="banner-title-letter">R</span>
+                    </div>
+                    <div class="banner-title-word">
+                        <span class="banner-title-letter">M</span>
+                        <span class="banner-title-letter">U</span>
+                        <span class="banner-title-letter">M</span>
+                        <span class="banner-title-letter">B</span>
+                        <span class="banner-title-letter">A</span>
+                        <span class="banner-title-letter">I</span>
+                    </div>
+                    <div class="banner-title-word">
+                        <span class="banner-title-letter">P</span>
+                        <span class="banner-title-letter">O</span>
+                        <span class="banner-title-letter">L</span>
+                        <span class="banner-title-letter">I</span>
+                        <span class="banner-title-letter">C</span>
+                        <span class="banner-title-letter">E</span>
+                    </div>
+                </h2>
                 <div class="col-sm-12 text-center">
                     <h5 class="banner-paragraph">
                         Taking stock of your security round the clock!</h5>
@@ -70,7 +96,7 @@
     </div>
     <div class="card-wrapper">
         <a href="{%url 'complaints'%}"  class="services-div">
-            <div class="a">
+            <div>
                 <img src="https://i.pinimg.com/originals/5a/cc/4b/5acc4b36bd558c9da8a103fc9df78e45.png" alt="Complaint">
                 <p class="grid-item-header">File a Complaint</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -79,7 +105,7 @@
         </a>
 
         <a href="{%url 'verification'%}"  class="services-div">
-            <div class="b">
+            <div>
                 <img src="https://images.squarespace-cdn.com/content/v1/5c87f593a9ab95124612e8b5/1553820132084-WX5VQFXM2E4N1QMIWO3P/ke17ZwdGBToddI8pDm48kC-KXPNpwVhJt7HqPz3fD11Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzRv3_YvL6LKDk3ZJj9jCA6NE6mKk-VZXhITqUf-mA3mYJGLMEMa8NIfODMBshPLOQ/eligibility-verification-icon.png" alt="verification">
                 <p class="grid-item-header">Tenant Verification</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -88,7 +114,7 @@
         </a>
 
         <a href="{%url 'e-challan'%}"  class="services-div">
-            <div class="c">
+            <div>
                 <img src="https://www.pngarts.com/files/3/Traffic-Light-PNG-Photo.png" alt="E-Challan" >
                 <p class="grid-item-header">Pay E-Challan Dues</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -97,7 +123,7 @@
         </a>
 
         <a href="{%url 'missing-person'%}" class="services-div">
-            <div class="d">
+            <div>
                 <img src="https://static.thenounproject.com/png/2707141-200.png" alt="Missing Person">
                 <p class="grid-item-header">Missing Person</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -106,7 +132,7 @@
         </a>
 
         <a href="{%url 'stolen-vehicles'%}"  class="services-div">
-            <div class="e">
+            <div>
                 <img src="https://webstockreview.net/images/clipart-people-car-3.png" alt="Stolen and Unclaimed Vehicles">
                 <p class="grid-item-header">Stolen and Unclaimed Vehicles</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -115,13 +141,40 @@
         </a>
 
         <a href="{% url 'view-criminal' %}"  class="services-div">
-            <div class="f">
+            <div>
                 <img src="https://w7.pngwing.com/pngs/340/706/png-transparent-prison-crime-police-computer-file-a-criminal-in-a-prison-jail-miscellaneous-police-officer-text.png" alt="Criminal Records">
                 <p class="grid-item-header">Criminal Records</p>
                 <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                     industry's standard dummy text ever since the 1500s</p>
             </div>
         </a>
+
+        <a href="{% url 'map' %}"  class="services-div">
+            <div>
+                <img src=" https://cdn.pixabay.com/photo/2016/04/24/04/53/globe-1348777_1280.png" alt="Geo Services">
+                <p class="grid-item-header">Geo Services</p>
+                <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s</p>
+            </div>
+        </a>
+
+        <a href="{% url 'status' %}"  class="services-div">
+            <div>
+                <img src="https://www.pinclipart.com/picdir/big/345-3450084_goal-clipart-goal-line-completion-status-icon-png.png" alt="Check Status">
+                <p class="grid-item-header">Check Status</p>
+                <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s</p>
+            </div>
+        </a>
+
+{#        <a href="{% url 'view-criminal' %}"  class="services-div">#}
+{#            <div class="f">#}
+{#                <img src="https://w7.pngwing.com/pngs/340/706/png-transparent-prison-crime-police-computer-file-a-criminal-in-a-prison-jail-miscellaneous-police-officer-text.png" alt="Criminal Records">#}
+{#                <p class="grid-item-header">Criminal Records</p>#}
+{#                <p class="grid-item-paragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the#}
+{#                    industry's standard dummy text ever since the 1500s</p>#}
+{#            </div>#}
+{#        </a>#}
     </div>
 </div>
 

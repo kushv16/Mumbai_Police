@@ -8,17 +8,17 @@ from .load_layer import run
 
 
 def map_home(request):
-	x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-	if x_forwarded_for:
-		ip = x_forwarded_for.split(',')[0]
-	else:
-		ip = request.META.get('REMOTE_ADDR')
-	g = GeoIP2()
-	(lat, lng) = g.lat_lon(ip)
+	# x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+	# if x_forwarded_for:
+	# 	ip = x_forwarded_for.split(',')[0]
+	# else:
+	# 	ip = request.META.get('REMOTE_ADDR')
+	# g = GeoIP2()
+	# (lat, lng) = g.lat_lon(ip)
 	# template_name = 'index.html'
 	context = {
-		'lat': lat,
-		'lng': lng,
+		'lat': 19,
+		'lng': 72,
 	}
 	return render(request, 'geo/index.html', context)
 

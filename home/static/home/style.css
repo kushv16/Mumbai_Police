@@ -64,20 +64,27 @@ html{
     text-decoration: none;
 }
 
-.geo-button {
-    border: 3px solid white;
-    color:#268f09;
-    background-color:#fff;
-    text-decoration: none;
+.welcome-navbar
+{
+    font-size:20px;
+    margin-top:1rem;
+    margin-bottom: 0;
 }
 
-.geo-button:hover
-{
-    background-color:#32b80d;
-    color:#fff;
-    text-decoration: none;
-    cursor: pointer;
-}
+/*.geo-button {*/
+/*    border: 3px solid white;*/
+/*    color:#268f09;*/
+/*    background-color:#fff;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.geo-button:hover*/
+/*{*/
+/*    background-color:#32b80d;*/
+/*    color:#fff;*/
+/*    text-decoration: none;*/
+/*    cursor: pointer;*/
+/*}*/
 
 .btn-nav:hover
 {
@@ -94,8 +101,37 @@ html{
 {
     padding:1rem;
     letter-spacing: 0.3rem;
+    display:flex;
+    justify-content: space-evenly;
+    font-family: 'Londrina Outline', cursive;
+    /*font-family: 'Bebas Neue', cursive;*/
+
+    font-weight:bold;
+    text-align: center;
+    font-size:60px;
 }
 
+.banner-title-word
+{
+    display:flex;
+}
+
+.banner-title-word span
+{
+    flex-grow: 1;
+}
+
+.banner-title-letter:hover
+{
+    transform: scale(1.5);
+    color:rgb(94,106,176)
+}
+.banner-paragraph
+{
+    font-family: 'Bebas Neue', cursive;
+    font-weight:bolder;
+    font-size:30px;
+}
 .carousel-inner
 {
     border-radius:50%;
@@ -241,7 +277,7 @@ form input {
 .footer-div
 {
     background-color: rgb(94,106,176);
-    padding:30px;
+    padding:15px;
 }
 
 .footer-div span
@@ -378,13 +414,12 @@ footer p {
     height: 200px;
 }
 
-table
+.status-table
 {
     table-layout: fixed;
-    width: 1000px;
 }
 
-.table td{
+.status-table td{
     text-transform: capitalize;
 }
 
@@ -401,4 +436,24 @@ table
     height: 76px !important;
     z-index: -999999;
     opacity: 0;
+}
+
+#gis
+{
+    margin:auto;
+    margin-bottom:15px;
+    /*height:600px;*/
+    /*width:600px;*/
+    /*border-radius:50%;*/
+    border:2px solid green;
+}
+
+.geo-banner
+{
+    padding:15px;
+    padding-bottom:0;
+}
+.geo-lat-lng
+{
+    text-align: center;
 }
