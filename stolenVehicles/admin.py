@@ -19,11 +19,11 @@ class stolenVehiclesInfoAdmin(admin.ModelAdmin):
     readonly_fields = ('fullName', 'contact' ,'model_name' ,'reg_no' ,'chassis_no', 'engine_no',
                        'datetime' ,'police_station', 'desc','user','ack_no')
 
-    list_display = ['fullName','model_name','datetime', 'admin_status']
-    ordering = ['fullName']
+    list_display = ['user','model_name','datetime', 'admin_status']
+    ordering = ['user']
     actions = [complaint_status_approve,complaint_status_reject]
 
-    search_fields = ('fullName',"model_name","datetime","police_station")
+    search_fields = ('user',"model_name","datetime","police_station")
     list_filter = ['datetime','police_station','admin_status']
 
 

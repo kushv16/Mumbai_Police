@@ -66,11 +66,21 @@ html{
 
 .welcome-navbar
 {
+    display:flex;
+    flex-direction: column;
     font-size:20px;
+    margin-right:20px;
     margin-top:1rem;
     margin-bottom: 0;
 }
 
+.login-div{
+    margin: auto;
+}
+
+.navbar-hello{
+    font-size:16px;
+}
 /*.geo-button {*/
 /*    border: 3px solid white;*/
 /*    color:#268f09;*/
@@ -103,12 +113,10 @@ html{
     letter-spacing: 0.3rem;
     display:flex;
     justify-content: space-evenly;
-    font-family: 'Londrina Outline', cursive;
-    /*font-family: 'Bebas Neue', cursive;*/
-
+    font-family: 'Bebas Neue', cursive;
     font-weight:bold;
     text-align: center;
-    font-size:60px;
+    font-size:50px;
 }
 
 .banner-title-word

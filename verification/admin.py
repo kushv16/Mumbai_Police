@@ -35,8 +35,8 @@ class VerificationInfoAdmin(admin.ModelAdmin):
     )
 
 
-    list_display = ['propOwnerFullName','tenantFullName','tenantReason', 'admin_status']
-    ordering = ['propOwnerFullName','tenantFullName']
+    list_display = ['user','tenantReason', 'admin_status']
+    ordering = ['user']
     actions = [complaint_status_approve,complaint_status_reject]
 
     search_fields = ('propOwnerFullName',"tenantFullName","tenantReason")

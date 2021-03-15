@@ -25,7 +25,6 @@ def uniqueId():
     return uniqueId
 
 def success(request):
-
     template = render_to_string('home/email_template.html',{'name':request.user.username})
     email = EmailMessage(
         'Your Complaint has been filed',

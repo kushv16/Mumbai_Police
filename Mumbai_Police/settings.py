@@ -13,9 +13,9 @@ import os
 from pathlib import Path
 import dj_database_url
 from secret_keys import *
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
 
 
 

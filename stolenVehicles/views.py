@@ -6,6 +6,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import stolenVehiclesInfo
 from secret_keys import *
+from complaints import views
+
 @login_required
 def stolenVehicles(request):
     secrets = {
@@ -35,6 +37,7 @@ def stolenVehicles_form_submission(request):
                                              reg_no=reg_no,chassis_no=chassis_no,engine_no=engine_no,
                                              datetime=datetime,police_station=police_station,desc=desc,ack_no=ack_no)
 
+    views.success(request)
     stolenVehicles_info.save()
     messages.success(request,f'Your Complaint has been filed and your acknowledgment id is {ack_no}.Our team will shortly get in touch with you.')
     return redirect('home')

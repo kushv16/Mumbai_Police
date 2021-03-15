@@ -36,8 +36,17 @@
 
         <div class="nav-btns-div">
             {% if user.is_authenticated %}
-                <p class="welcome-navbar">Hello, {{ user.username }}</p>
-                <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
+                <div class="welcome-navbar">
+                    <span class="navbar-hello">
+                        Welcome,
+                    </span>
+                    <span>
+                        {{ user.username }}
+                    </span>
+                </div>
+                <div class="login-div">
+                    <a class="btn btn-nav" href="{% url 'logout' %}">Logout</a>
+                </div>
 
             {%else %}
                 <a class="btn btn-nav" href="{% url 'register' %}">Register</a>

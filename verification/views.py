@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import VerificationInfo
 from secret_keys import *
+from complaints import views
 
 @login_required
 def verification(request):
@@ -55,6 +56,7 @@ def verification_form_submission(request):
                                          tenantOrganisation=tenantOrganisation,tenantDepartment=tenantDepartment,tenantID=tenantID,tenantInstitute=tenantInstitute,
                                          tenantBranch=tenantBranch,desc=desc,ack_no=ack_no)
 
+    views.success(request)
     verification_info.save()
     messages.success(request,f'Your Complaint has been filed and your acknowledgment id is {ack_no}.Our team will shortly get in touch with you.')
     return redirect('home')

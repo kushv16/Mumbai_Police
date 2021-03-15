@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import missingPersonInfo
 from secret_keys import *
+from complaints import views
+
 @login_required
 def missingPerson(request):
     secrets = {
@@ -38,6 +40,7 @@ def missingPerson_form_submission(request):
                                           height=height,datetime=datetime,placemissing=placemissing,police_st=police_st,
                                           desc=desc,image=image,ack_no=ack_no)
 
+    # views.success(request)
     missingPerson_info.save()
     messages.success(request,f'Your Complaint has been filed and your acknowledgment id is {ack_no}.Our team will shortly get in touch with you.')
     return redirect('home')
