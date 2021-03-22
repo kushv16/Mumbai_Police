@@ -140,16 +140,17 @@ html{
     font-weight:bolder;
     font-size:30px;
 }
+
 .carousel-inner
 {
     border-radius:50%;
     text-align: center;
 }
 
-.carousel-inner img {
-    width: 800px;
-    height:500px
-}
+/*.carousel-inner img {*/
+/*    width:800px;*/
+/*    height:500px*/
+/*}*/
 
 .section {
     padding: 60px 0;
