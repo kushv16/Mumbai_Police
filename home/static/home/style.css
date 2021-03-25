@@ -287,6 +287,7 @@ form input {
 {
     background-color: rgb(94,106,176);
     padding:15px;
+    margin-bottom:0px;
 }
 
 .footer-div span

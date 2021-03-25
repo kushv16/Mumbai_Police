@@ -1,3 +1,5 @@
+from django.contrib.gis.db.models.functions import Distance
+from django.contrib.gis.geos import Point
 from django.shortcuts import render
 from .models import Maha1, Incidences
 from django.views.generic import TemplateView
@@ -15,10 +17,40 @@ def map_home(request):
 	# 	ip = request.META.get('REMOTE_ADDR')
 	# g = GeoIP2()
 	# (lat, lng) = g.lat_lon(ip)
-	# template_name = 'index.html'
+	lat = 19.0748
+	lng = 72.8856
+	pnt = Point(lng, lat, srid=4326)
+	inc_near = Incidences.objects.annotate(
+		distance=Distance('location', pnt)
+	).order_by('distance').first()
+	# print(inc_near)
+	# name = Incidences.objects.filter('name' == inc_near)
+	string = str(inc_near.location)
+	near_lat = ""
+	near_lng = ""
+	take1 = True
+	go = False
+	for i in string:
+		if i == '(':
+			go = True
+			continue
+		if i == ')':
+			break
+		if go:
+			if i == " ":
+				take1 = False
+			elif take1:
+				near_lng += i
+			else:
+				near_lat += i
+
+	all_incidences = Incidences.objects.all()
 	context = {
-		'lat': 19,
-		'lng': 72,
+		'lng': lng,
+		'lat': lat,
+		'near_lat': near_lat,
+		'near_lng': near_lng,
+		'all_incidences': all_incidences,
 	}
 	return render(request, 'geo/index.html', context)
 

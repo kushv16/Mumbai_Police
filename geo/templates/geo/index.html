@@ -57,6 +57,7 @@
     <h3 class="geo-lat-lng">You are here : {{ lat }}, {{ lng }}!</h3>
 </div>
 <br>
+
 <script type="text/javascript">
 	function our_layers(map,options){
 		var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -110,17 +111,19 @@
 
 		L.control.groupedLayers(baseLayers, groupedOverlays).addTo(map);
 
-		var routing =  L.Routing.control({
-		  waypoints: [
-		    L.latLng({{ lat }}, {{ lng }}),
-            L.latLng({{ lat }}, {{ lng }}),
-          ]
-		}).addTo(map);
+        var routing =  L.Routing.control({
+            waypoints: [
+                L.latLng({{ lat }}, {{ lng }}),
+                L.latLng({{ near_lat }}, {{ near_lng }}),
+            ]
+        }).addTo(map);
 	}
 
 </script>
+
 {% leaflet_map "gis" callback="window.our_layers" %}
-<div class="footer-div">
+
+<footer class="footer-div">
     <div class="col-sm-12 col-md-12 col-sm-12 col-xs-12 text-center d-flex justify-content-between footer-div">
         <div class="col-sm-12 col-md-5 col-sm-5 col-xs-12 text-center">
             <span title="Whats App">Traffic WhatsApp Helpline :</span> <a href="tel:8454999999" title="8454999999">8454999999</a>
@@ -136,10 +139,7 @@
             <span title="Elder Line">Elder Line :</span> <a href="tel:1090" title="1090">1090</a>
         </div>
     </div>
+</footer>
 
-    <div class="text-center">
-        <span>Copyright © | Developed by Kush, Marmik, Divesh</span>
-    </div>
-</div>
 </body>
 </html>

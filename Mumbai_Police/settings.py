@@ -14,9 +14,9 @@ from pathlib import Path
 import dj_database_url
 from secret_keys import *
 
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 
 
@@ -235,10 +235,10 @@ DATABASES['default'].update(prod_db)
 # DATABASES['default'] = dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
-# cloudinary.config(
-#   cloud_name = "dhmcjaash",
-#   api_key = "678733423572592",
-#   api_secret = CLOUDINARY_API_SECRET
-# )
-#
+cloudinary.config(
+  cloud_name = "dhmcjaash",
+  api_key = "678733423572592",
+  api_secret = "0ts3tZxve9J573VJoJV2gQ7wqtA"
+)
+
 
