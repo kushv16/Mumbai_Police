@@ -413,6 +413,9 @@ footer p {
     margin: auto;
     padding: 30px;
     box-shadow: 8px 8px 20px #474747;
+    width:1000px;
+    height:400px;
+    max-height:100%;
 }
 
 .missper tr td{
