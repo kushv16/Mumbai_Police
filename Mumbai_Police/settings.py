@@ -17,7 +17,9 @@ from secret_keys import *
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-
+import environ
+env = environ.Env()
+environ.Env.read_env()
 
 
 #Used to fix gdal library error
@@ -44,7 +46,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3_ntarp0b90njtopjrjk+zlk@0j9_3z_4vj_gb@upp#^=+c87!'
+SECRET_KEY = env('secret_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -215,12 +217,14 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
 
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mumbaipolice366@gmail.com'
-EMAIL_HOST_PASSWORD = 'diveshkushmarmik'
+EMAIL_HOST_USER = env('email_user')
+EMAIL_HOST_PASSWORD = env('email_pass')
 EMAIL_USE_TLS = True
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 GDAL_LIBRARY_PATH = os.environ.get('GDAL_LIBRARY_PATH')
@@ -236,9 +240,9 @@ DATABASES['default'].update(prod_db)
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 cloudinary.config(
-  cloud_name = "dhmcjaash",
-  api_key = "678733423572592",
-  api_secret = "0ts3tZxve9J573VJoJV2gQ7wqtA"
+  cloud_name = env('cloud_name'),
+  api_key = env('cloud_api_key'),
+  api_secret = env('cloud_api_secret')
 )
 
 
