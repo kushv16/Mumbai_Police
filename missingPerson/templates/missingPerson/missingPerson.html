@@ -1,0 +1,211 @@
+{% extends "users/userbase.html" %}
+{% block content %}
+<title>Missing Person Form</title>
+<div class="section section-white">
+    <div class="container">
+        <div class="section-heading">
+            <h3 align="center" style="font-size:40px"><b>Mis<u style="text-decoration-color:#5f41ba">sing Pers</u>ons</b></h3><br>
+        </div>
+
+        <form action="{% url 'missingPerson_form_submission' %}" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="firstName">First Name *</label>
+                    <input type="text" class="form-control" id=firstName" name="firstName" placeholder="Aryan" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="lastname">Last Name *</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Mehta" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="Gender">Gender </label>
+                    <select name="gender" required class="form-control" id="gender" style="margin-top: 10px">
+                        <option value="">Choose...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="age">Age *</label>
+                    <input type="num" class="form-control" id="age" name="age" placeholder="18" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="color">Color</label>
+                    <input type="text" class="form-control" id="color" name="color" placeholder="Fair">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="height">Height</label>
+                    <input type="text" class="form-control" id="height" name="height" placeholder="5 ft">
+                </div>
+            </div>
+
+            <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="datetime">Date of Incident:</label>
+                    <input type="date" id="datetime" name="datetime" required style="height: 40px">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="placemissing">Place Of Missing:</label>
+                    <input type="text" class="form-control" id="placemissing" name="placemissing" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="complaint-form-label" for="police_st">Nearest Police Station: * </label>
+                    <select id="police_st" required class="form-control" name="police_st" style="margin-top: 10px">
+                        <option value="">Choose...</option>
+                        <option value="Aarey">Aarey</option>
+                        <option value="Agripada">Agripada</option>
+                        <option value="Amboli">Amboli</option>
+                        <option value="Airport">Airport</option>
+                        <option value="Andheri">Andheri</option>
+                        <option value="Antop Hill">Antop Hill</option>
+                        <option value="Azad Maidan">Azad Maidan</option>
+                        <option value="B.K.C">B.K.C.</option>
+                        <option value="Bandra">Bandra</option>
+                        <option value="Bangur">Bangur Nagar</option>
+                        <option value="Bhandup">Bhandup</option>
+                        <option value="Bhoiwada">Bhoiwada</option>
+                        <option value="Borivali">Borivali</option>
+                        <option value="Byculla">Byculla</option>
+                        <option value="Central Region Cyber">Central Region Cyber</option>
+                        <option value="Charkop">Charkop</option>
+                        <option value="Chembur">Chembur</option>
+                        <option value=Chunabhatti">Chunabhatti</option>
+                        <option value="Colaba">Colaba</option>
+                        <option value="Cuffe Parade">Cuffe Parade</option>
+                        <option value="D. N. Nagar">D. N. Nagar</option>
+                        <option value="Dadar">Dadar</option>
+                        <option value="Dahisar">Dahisar</option>
+                        <option value="Deonar">Deonar</option>
+                        <option value="Dharavi">Dharavi</option>
+                        <option value="Dindoshi">Dindoshi</option>
+                        <option value="Dongri">Dongri</option>
+                        <option value="Dr.D.B Marg">Dr.D.B Marg</option>
+                        <option value="East Region Cyber">East Region Cyber</option>
+                        <option value="Gamdevi">Gamdevi</option>
+                        <option value="Ghatkopar">Ghatkopar</option>
+                        <option value="Gorai">Gorai</option>
+                        <option value="Goregaon">Goregaon</option>
+                        <option value="Govandi">Govandi</option>
+                        <option value="Jogeshwari">Jogeshwari</option>
+                        <option value="uhu">Juhu</option>
+                        <option value="Kalachowki">Kalachowki</option>
+                        <option value="Kandivali">Kandivali</option>
+                        <option value="Kanjurmarg">Kanjurmarg</option>
+                        <option value="Kasturba marg">Kasturba marg</option>
+                        <option value="Khar">Khar</option>
+                        <option value="Kherwadi">Kherwadi</option>
+                        <option value="Kurar">Kurar</option>
+                        <option value="Kurla">Kurla</option>
+                        <option value="L. T. Marg">L. T. Marg</option>
+                        <option value="M.H.B. Colony">M.H.B. Colony</option>
+                        <option value="M.I.D.C.">M.I.D.C.</option>
+                        <option value="M.R.A. Marg">M.R.A. Marg</option>
+                        <option value="Mahim">Mahim</option>
+                        <option value="Malabar Hill">Malabar Hill</option>
+                        <option value="Malad">Malad</option>
+                        <option value="Malvani">Malvani</option>
+                        <option value="Mankhurd">Mankhurd</option>
+                        <option value="Marine Drive">Marine Drive</option>
+                        <option value="Matunga">Matunga</option>
+                        <option value="Meghwadi">Meghwadi</option>
+                        <option value="Mulund">Mulund</option>
+                        <option value="N. M. Joshi Marg">N. M. Joshi Marg</option>
+                        <option value="Nagpada">Nagpada</option>
+                        <option value="Navghar">Navghar</option>
+                        <option value="Nehru Nagar">Nehru Nagar</option>
+                        <option value="Nirmal Nagar">Nirmal Nagar</option>
+                        <option value="North Region Cyber">North Region Cyber</option>
+                        <option value="Oshiwara">Oshiwara</option>
+                        <option value="PantNagar">PantNagar</option>
+                        <option value="Parksite">Parksite</option>
+                        <option value="Powai">Powai</option>
+                        <option value="Pydhonie">Pydhonie</option>
+                        <option value="R.A.K. Marg">R.A.K. Marg</option>
+                        <option value="R.C.F">R.C.F.</option>
+                        <option value="Sahar">Sahar</option>
+                        <option value="Sakinaka">Sakinaka</option>
+                        <option value="Samta Nagar">Samta Nagar</option>
+                        <option value="Santacruz">Santacruz</option>
+                        <option value="Sewree">Sewree</option>
+                        <option value="Shahu nagar">Shahu nagar</option>
+                        <option value="Shivaji Nagar">Shivaji Nagar</option>
+                        <option value="Shivaji Park">Shivaji Park</option>
+                        <option value="Sion">Sion</option>
+                        <option value="Sir J.J. Marg">Sir J.J. Marg</option>
+                        <option value="South Region Cyber">South Region Cyber</option>
+                        <option value="Tardeo">Tardeo</option>
+                        <option value="Tilak Nagar">Tilak Nagar</option>
+                        <option value="Trombay">Trombay</option>
+                        <option value="V. P. Road">V. P. Road</option>
+                        <option value="Vakola">Vakola</option>
+                        <option value="Vanrai">Vanrai</option>
+                        <option value="Versova">Versova</option>
+                        <option value="Vikhroli">Vikhroli</option>
+                        <option value="VileParle">VileParle</option>
+                        <option value="Vinoba Bhave Nagar">Vinoba Bhave Nagar</option>
+                        <option value="Wadala">Wadala</option>
+                        <option value="Wadala Truck Terminal">Wadala Truck Terminal</option>
+                        <option value="West Region Cyber">West Region Cyber</option>
+                        <option value="Worli">Worli</option>
+                        <option value="Yellow Gate">Yellow Gate</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="complaint-form-label" for="desc">Description *</label>
+                <textarea class="form-control" id="desc" name = "desc" rows="5" required></textarea>
+            </div>
+
+            <br><br>
+
+             <div class="form-group">
+                <small><i style="font-size: 13px">Max 5 MB</i></small>
+                <p style="margin: 0px">Select Files to Upload</p>
+                <input style="margin: 2px" type="file" autocomplete="nope" multiple="" name="image">
+            </div>
+
+
+            <div class="form-check">
+                <input style="width:30px;height:30px" required class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
+
+                <p class="form-disclaimer">
+                    I certify that the information provided by me in above form is accurate and correct as per best of my knowledge. I understand that withholding of information or giving false information is a criminal offense and may result in legal action against me.
+                    <br>
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="d-flex justify-content-between btn-div">
+                <input type="reset" value="Reset" class="reset-btn">
+                <input id="submit-btn" type="submit" value="Submit" class="submit-btn">
+            </div>
+
+
+        </form>
+
+        <br><br>
+
+    </div>
+</div>
+
+    <script>
+        function submitFunction()
+        {
+            alert("Your complaint has been filed . We will shortly get in touch with you.")
+            window.location.href="{% url 'home' %}"
+        }
+    </script>
+
+{% endblock %}

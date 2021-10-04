@@ -1,0 +1,32 @@
+#header{
+    color:#fff;
+    background-color:rgb(94,106,176);
+}
+
+#branding h1{
+    color:#fff;
+}
+
+div.breadcrumbs {
+    background: rgba(94,106,176,0.8);
+    color: rgba(255,255,255,0.8);
+}
+
+button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: rgb(94,106,176);
+    border-radius: 4px;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: rgb(94,106,176);
+    color: #fff;
+}
+
+a:link, a:visited {
+    color: rgba(94,106,176,0.8);
+}
+
+.dashboard #content {
+    width: 900px;
+}
+

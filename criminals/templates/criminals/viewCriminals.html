@@ -1,0 +1,15 @@
+{% extends "users/userbase.html" %}
+{% block headtag %}
+    <head>
+        <title>Criminal Records</title>
+    </head>
+{% endblock %}
+{% block content %}
+    {% for criminal in Criminals %}
+        <div>
+            <p>{{ criminal.fullName }}</p>
+            <p>{{ criminal.address }}</p>
+            <img src="{{criminal.image.url}}">
+        </div>
+    {% endfor %}
+{% endblock %}

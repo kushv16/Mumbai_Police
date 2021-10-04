@@ -1,0 +1,270 @@
+{% extends "users/userbase.html" %}
+
+{% block headtag %}
+    <head>
+        <title>Verification</title>
+    </head>
+{% endblock %}
+{% block content %}
+
+<div class="section section-white">
+    <div class="container">
+        <div class="section-heading">
+            <h3 align="center" style="font-size:40px"><b>Ten<u style="text-decoration-color:#5f41ba">ant Verifici</u>ation</b></h3><br>
+        </div>
+        <br>
+
+        <form action="{% url 'verification_form_submission' %}" method="post" onsubmit="submitFunction()">
+            {% csrf_token %}
+            <div class="section-heading">
+              <h3 align="center" style="font-size:20px">Property Owner's Information:</h3><br>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerFullName">Full Name *</label>
+                    <input type="text" class="form-control" id="propOwnerFullName" name="propOwnerFullName" placeholder="Aryan" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerContact">Contact Number *</label>
+                    <input type="tel" class="form-control" id="propOwnerContact" name="propOwnerContact" placeholder="9987505854" required>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerEmail">Email *</label>
+                    <input type="email" class="form-control" id="propOwnerEmail" name="propOwnerEmail" placeholder="example@domain.com" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerFlatno">Room No/Street Name</label>
+                    <input type="text" class="form-control" id="propOwnerFlatno" name="propOwnerFlatno" placeholder="1209">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerAddress">Address</label>
+                    <input type="text" class="form-control" id="propOwnerAddress" name="propOwnerAddress" placeholder="Sector-1,Bandra">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="propOwnerCity">City</label>
+                    <input type="text" class="form-control" id="propOwnerCity" name="propOwnerCity" placeholder="Mumbai">
+                </div>
+            </div>
+
+            <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-5">
+                    <label class="complaint-form-label" for="propOwnerState">State</label>
+                    <input type="text" class="form-control" id="propOwnerState" name="propOwnerState" placeholder="Maharashtra">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label class="complaint-form-label" for="propOwnerCountry">Country</label>
+                    <input type="text" class="form-control" id="propOwnerCountry" name="propOwnerCountry" placeholder="India">
+                </div>
+
+            </div>
+            <br><br>
+
+
+            <div class="section-heading">
+              <h3 align="center" style="font-size:20px">Tenant's Information:</h3><br>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantFullName">Full Name *</label>
+                    <input type="text" class="form-control" id="tenantFullName" name="tenantFullName" placeholder="Aryan" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantContact">Contact Number *</label>
+                    <input type="tel" class="form-control" id="tenantContact" name="tenantContact" placeholder="9987505854" required>
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantEmail">Email *</label>
+                    <input type="email" class="form-control" id="tenantEmail" name="tenantEmail" placeholder="example@domain.com" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantFlatno">Room No/Street Name</label>
+                    <input type="text" class="form-control" id="tenantFlatno" name="tenantFlatno" placeholder="1209">
+                </div>
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantAddress">Address</label>
+                    <input type="text" class="form-control" id="tenantAddress" name="tenantAddress" placeholder="Sector-1,Bandra">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantCity">City</label>
+                    <input type="text" class="form-control" id="tenantCity" name="tenantCity" placeholder="Mumbai">
+                </div>
+            </div>
+
+            <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-5">
+                    <label class="complaint-form-label" for="tenantState">State</label>
+                    <input type="text" class="form-control" id="tenantState" name="tenantState" placeholder="Maharashtra">
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label class="complaint-form-label" for="tenantCountry">Country</label>
+                    <input type="text" class="form-control" id="tenantCountry" name="tenantCountry" placeholder="India">
+                </div>
+            </div>
+
+            <div class="form-row d-flex justify-content-between">
+                <div class="form-group col-md-4">
+                    <label class="complaint-form-label" for="tenantDOB">Date of Birth:</label>
+                    <input type="date" id="tenantDOB" name="tenantDOB" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="complaint-form-label" for="tenantReason">Reason for Migration * </label>
+                    <select id="TenantReason" required class="form-control" name="tenantReason" onchange="choice(this);">
+                        <option value="">Choose...</option>
+                        <option value="Education">Education</option>
+                        <option value="Work">Work</option>
+                        <option value="Medical">Medical</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="if-work" style="display: none">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantOrganisation">Organisation Name *</label>
+                        <input type="text" class="form-control" id="tenantOrganisation" name="tenantOrganisation" placeholder="Infosys">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantDepartment">Department *</label>
+                        <input type="text" class="form-control" id="tenantDepartment" name="tenantDepartment" placeholder="Department of Higher Management">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantId">ID Number *</label>
+                        <input type="text" class="form-control" id="tenantId" name="tenantId" placeholder="162520465655">
+                    </div>
+                </div>
+            </div>
+
+            <div id="if-education" style="display: none">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantInstitute">Institute Name *</label>
+                        <input type="text" class="form-control" id="tenantInstitute" name="tenantInstitute" placeholder="K.J. Somaiya College Of Engineering">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantBranch">Branch *</label>
+                        <input type="text" class="form-control" id="tenantBranch" name="tenantBranch" placeholder="Computers">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="complaint-form-label" for="tenantID">ID Number *</label>
+                        <input type="text" class="form-control" id="tenantID" name="tenantID" placeholder="162520465655">
+                    </div>
+                </div>
+            </div>
+
+            <div id="if-medical" style="display: none">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="complaint-form-label" for="desc">Medical Reason *</label>
+                        <textarea class="form-control" id="desc" name = "desc" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div id="if-other" style="display: none">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label class="complaint-form-label" for="desc">Reason *</label>
+                        <textarea class="form-control" id="desc" name = "desc" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+
+
+
+            <div class="form-group">
+                <small><i style="font-size: 13px">Max 5 MB</i></small>
+                <p style="margin: 0px">Select Files to Upload</p>
+                <input style="margin: 2px" type="file" autocomplete="nope" multiple="">
+            </div>
+
+
+            <div class="form-check">
+                <input style="width:30px;height:30px" required class="form-check-input" type="checkbox" value="" id="flexCheckChecked" unchecked>
+
+                <p class="form-disclaimer">
+                    I certify that the information provided by me in above form is accurate and correct as per best of my knowledge. I understand that withholding of information or giving false information is a criminal offense and may result in legal action against me.
+                    <br>
+                    <br>
+                </p>
+
+            </div>
+
+            <div class="d-flex justify-content-between btn-div">
+                <input type="reset" value="Reset" class="reset-btn">
+                <input id="submit-btn" type="submit" value="Submit" class="submit-btn">
+            </div>
+
+
+        </form>
+        <br><br>
+    </div>
+</div>
+
+    <script>
+
+            function choice(that) {
+            if(that.value=='Work')
+            {
+                document.getElementById('if-work').style.display="block";
+                document.getElementById('if-education').style.display = "none";
+                document.getElementById('if-medical').style.display="none";
+                document.getElementById('if-other').style.display="none";
+            }
+            else if(that.value=='Education')
+            {
+                document.getElementById('if-education').style.display="block";
+                document.getElementById('if-work').style.display = "none";
+                document.getElementById('if-medical').style.display="none";
+                document.getElementById('if-other').style.display="none";
+            }
+            else if(that.value=='Medical')
+            {
+                document.getElementById('if-medical').style.display="block";
+                document.getElementById('if-work').style.display = "none";
+                document.getElementById('if-education').style.display="none";
+                document.getElementById('if-other').style.display="none";
+            }
+            else if(that.value=='Others')
+            {
+                document.getElementById('if-other').style.display="block";
+                document.getElementById('if-work').style.display = "none";
+                document.getElementById('if-medical').style.display="none";
+                document.getElementById('if-education').style.display="none";
+            }
+            else
+            {
+                document.getElementById('if-other').style.display="none";
+                document.getElementById('if-work').style.display = "none";
+                document.getElementById('if-medical').style.display="none";
+                document.getElementById('if-education').style.display="none";
+            }
+
+        }
+
+        function submitFunction()
+        {
+            alert("Your complaint has been filed . We will shortly get in touch with you.")
+            window.location.href="{% url 'home' %}"
+        }
+
+    </script>
+
+{% endblock %}
