@@ -4,16 +4,19 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import complaintsInfo
 from random import randint
-from secret_keys import *
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.conf import settings
 from complaints import models
 
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
 @login_required
 def complaints(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY' : reCAPTCHA_SITE_KEY,
+        'reCAPTCHA_SITE_KEY' : env('recaptcha_key'),
     }
     return render(request,'complaints/complaints.html', secrets)
 

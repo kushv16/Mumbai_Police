@@ -4,13 +4,17 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .models import VerificationInfo
-from secret_keys import *
 from complaints import views
+
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
 
 @login_required
 def verification(request):
     secrets = {
-        'reCAPTCHA_SITE_KEY': reCAPTCHA_SITE_KEY,
+        'reCAPTCHA_SITE_KEY': env("recaptcha_key"),
     }
     return render(request,'verification/verification.html', secrets)
 
