@@ -8,3 +8,5 @@
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkushv16%2FMumbai_Police%2Fbadge&style=for-the-badge)](https://actions-badge.atrox.dev/kushv16/Mumbai_Police/goto)
 
 ![Screenshot from 2021-02-08 16-53-05](https://user-images.githubusercontent.com/52334437/107213372-4db9e380-6a2e-11eb-83c6-c85810400223.png)
+
+## NOTE: We regret to inform you that our website is currently down due to the end of free services provided by Heroku. We are working diligently to migrate to a different service and hope to get our website back up and running as soon as possible. 
