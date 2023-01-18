@@ -9,4 +9,4 @@
 
 ![Screenshot from 2021-02-08 16-53-05](https://user-images.githubusercontent.com/52334437/107213372-4db9e380-6a2e-11eb-83c6-c85810400223.png)
 
-## NOTE: We regret to inform you that our website is currently down due to the end of free services provided by Heroku. We are working diligently to migrate to a different service and hope to get our website back up and running as soon as possible. 
+NOTE: We regret to inform you that our website is currently down due to the end of free services provided by Heroku. We will migrate to a different service and hope to get our website back up and running as soon as possible. 
